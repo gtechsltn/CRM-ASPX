@@ -8,10 +8,6 @@
 + http://www.java2s.com/Open-Source/AspDotNet_Free_Code/CRM/Download_Asp_net_CRM.htm
 + http://www.java2s.com/Open-Source/AspDotNet_Free_Code/CRM/Download_SplendidCRM.htm
 
-## SmartStore
-+ Net FW: https://github.com/smartstore/SmartStoreNET
-+ Net Core: https://github.com/smartstore/Smartstore
-
 ## MixERP
 + Net FW: https://github.com/flukehan/MixERP
 
@@ -31,8 +27,12 @@
 + https://smarthms.optimumsol.com/Account/Login
 + Admin Login: Username/Password: admin/admin1234
 
-## ERP (HMS)
+## ERP
 + https://codecanyon.net/item/business-erp-solutionproductposcompany-management/37835058
 + http://erp.netspeedm.com/
 + http://erp.netspeedm.com/Account/Login
 + Admin Login: Email/Password: admin@gmail.com/123
+
+## SmartStore
++ Net FW: https://github.com/smartstore/SmartStoreNET
++ Net Core: https://github.com/smartstore/Smartstore
