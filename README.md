@@ -6,6 +6,7 @@
 
 ## HTML5 Boilerplate
 + https://github.com/h5bp/html5-boilerplate/releases
++ https://1stwebdesigner.com/html5-boilerplate/
 
 ## Initializr - Start an HTML5 Boilerplate project in 15 seconds!
 + http://www.initializr.com/
