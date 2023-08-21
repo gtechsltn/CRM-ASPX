@@ -3,10 +3,12 @@
 + https://themeforest.net/search/crm?compatible_with=Bootstrap
 
 # HTML5 Boilerplate
++ https://www.heliossolutions.co/blog/boilerplate-or-bootstrap/
 
 ## HTML5 Boilerplate
 + https://github.com/h5bp/html5-boilerplate/releases
 + https://1stwebdesigner.com/html5-boilerplate/
++ https://1stwebdesigner.com/6-resources-for-javascript-code-snippets/
 
 ## Initializr - Start an HTML5 Boilerplate project in 15 seconds!
 + http://www.initializr.com/
