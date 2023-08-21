@@ -2,7 +2,28 @@
 + https://github.com/gtechsltn/CRM
 + https://themeforest.net/search/crm?compatible_with=Bootstrap
 
-## Free
+# HTML5 Boilerplate
+
+## HTML5 Boilerplate
++ https://github.com/h5bp/html5-boilerplate/releases
+
+## Initializr - Start an HTML5 Boilerplate project in 15 seconds!
++ http://www.initializr.com/
+  + Classic H5BP
+  + Responsive
+  + Bootstrap
+
+## HTML5 Boilerplate
++ https://github.com/elgreg/html5-boilerstrap
+  + IE6, ..., IE11
+  + jQuery
+
+## Free themes for Bootstrap
++ https://bootswatch.com/#gallery
++ https://medium.com/codebagng/working-with-html5-boilerplate-fca93b9b61e9
++ https://themewagon.com/themes/bootstrap-html5-multipurpose-business-template-startup/
+
+# ASP.NET Free Code
 + http://www.java2s.com/Open-Source/AspDotNet_Free_Code/CRM/Download_CRM_2011_ASP_NET_Membership_Provider.htm
 + http://www.java2s.com/Open-Source/AspDotNet_Free_Code/CRM/Download_OpenMVCRM.htm
 + http://www.java2s.com/Open-Source/AspDotNet_Free_Code/CRM/Download_Asp_net_CRM.htm
