@@ -23,7 +23,8 @@
   + jQuery
 
 ## Free themes for Bootstrap
-+ https://bootswatch.com/#gallery
++ https://bootswatch.com/
++ https://github.com/thomaspark/bootswatch/
 + https://medium.com/codebagng/working-with-html5-boilerplate-fca93b9b61e9
 
 ## Free Bootstrap 4 HTML5 site:themewagon.com
