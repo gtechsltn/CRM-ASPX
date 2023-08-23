@@ -83,3 +83,24 @@
 ## Google reCaptcha v2
 + **How to use reCaptcha v2 in ASP.NET**
 + https://gist.github.com/gtechsltn/9f7443efcec807579430014d817e8553
+
+## Generating Short URLs Using Google URL Shortener API
++ https://www.binaryintellect.net/articles/09bf16f8-ad91-4638-8fce-f2e286f6fe1d.aspx
+
+## Using ValidateAntiForgeryToken Attribute In ASP.NET MVC
++ https://www.binaryintellect.net/articles/20e546b4-3ae9-416b-878e-5b12434fe7a6.aspx
+
+## Backend Libraries
++ Dapper
++ Log4Net
++ Humanizer
+
+## Frontend Libraries
++ Moment.js
++ Select2
++ DataTables
++ AutoNumeric.js
+
+# Serene Framework
++ https://marketplace.visualstudio.com/items?itemName=VolkanCeylan.SereneSerenityApplicationTemplate
++ https://marketplace.visualstudio.com/items?itemName=VolkanCeylan.SereneMvc
