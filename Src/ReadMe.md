@@ -22,7 +22,10 @@
 
 # How to
 
-## SQL
+## .Gitignore for ASP.NET MVC
++ https://gist.github.com/gtechsltn/70459cbccdfa2c66e7e54cd349527847
+
+## SQL Server
 + **Check table exists**
 + https://stackoverflow.com/questions/167576/check-if-table-exists-in-sql-server
 + **Auto Increment with ID column**
