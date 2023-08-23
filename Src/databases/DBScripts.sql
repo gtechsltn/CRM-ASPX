@@ -79,12 +79,12 @@ CREATE TABLE [dbo].[Customer](
 	[CMND] [nvarchar](50) NULL,
 	[Address] [nvarchar](50) NULL,
 	[DoB] [DateTime] NULL,
-	[YoB] [Int] NULL,
+	[YoB] [SmallInt] NULL,
 	[Email] [nvarchar](50) NULL,
 	[Email2] [nvarchar](50) NULL,
 	[Mobile] [nvarchar](50) NULL,
 	[Mobile2] [nvarchar](50) NULL,
-	[Gener] [varchar](1) NULL,
+	[Gender] [varchar](1) NULL,
 	[Facebook] [nvarchar](50) NULL,
 	[Facebook2] [nvarchar](50) NULL,
 	[Hobbies] [nvarchar](500) NULL,
@@ -94,6 +94,6 @@ GO
 
 SET IDENTITY_INSERT [dbo].[Customer] ON
 
-INSERT INTO [dbo].[Customer]([Id],[FirstName],[LastName],[CCCD],[Address],[DoB],[YoB],[Email],[Mobile],[Gener],[Facebook],[Hobbies],[Note]) VALUES (1,N'Mạnh',N'Nguyễn Viết',N'027083000720',N'Tecco Garden, Tứ Hiệp, Thanh Trì, Hà Nội','1983-06-25 15:50:00.000',1983,N'manhng83@gmail.com',N'0982411958','M',N'https://www.facebook.com/manh.nguyenviet.167189',N'Đá bóng, Bóng chuyền hơi',N'Lập trình viên')
+INSERT INTO [dbo].[Customer]([Id],[FirstName],[LastName],[CCCD],[Address],[DoB],[YoB],[Email],[Mobile],[Gender],[Facebook],[Hobbies],[Note]) VALUES (1,N'Mạnh',N'Nguyễn Viết',N'027083000720',N'Tecco Garden, Tứ Hiệp, Thanh Trì, Hà Nội','1983-06-25 15:50:00.000',1983,N'manhng83@gmail.com',N'0982411958','M',N'https://www.facebook.com/manh.nguyenviet.167189',N'Đá bóng, Bóng chuyền hơi',N'Lập trình viên')
 
 SET IDENTITY_INSERT [dbo].[Customer] OFF

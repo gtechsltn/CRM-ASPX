@@ -62,6 +62,10 @@
 ## DataTables
 + https://www.c-sharpcorner.com/article/using-jquery-datatable-with-asp-net-mvc-client-side/
 
+## SQL Server Data Type Mappings - ADO.NET
++ https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql-server-data-type-mappings
++ https://stackoverflow.com/questions/425389/c-sharp-equivalent-of-sql-server-datatypes
+
 ## Logging
 + ..\Src\WebApplication1\logs\debug-appending.log
 + ..\Src\WebApplication1\logs\debug-rolling.log

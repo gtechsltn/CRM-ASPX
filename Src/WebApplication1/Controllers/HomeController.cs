@@ -7,6 +7,7 @@ using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Security;
 using WebApplication1.Business;
+using WebApplication1.Helpers;
 using WebApplication1.Infrastructure;
 using WebApplication1.Models;
 
@@ -64,7 +65,7 @@ namespace WebApplication1.Controllers
             Debug.WriteLine(connectionString); // => Data Source=localhost;Initial Catalog=CRMS;Integrated Security=SSPI;MultipleActiveResultSets=True
 
             var lst = new List<CustomerModel>();
-            string cmdText = "SELECT [Id], [FirstName], [LastName], [Email], [Mobile] FROM [dbo].[Customer]";
+            string cmdText = "SELECT [Id], [FirstName], [LastName], [Email], [Mobile], [DoB], [YoB], [Gender] FROM [dbo].[Customer]";
             using (var conn = new SqlConnection(connectionString))
             {
                 conn.Open();
@@ -80,11 +81,17 @@ namespace WebApplication1.Controllers
                             var lastName = reader.GetString(2);
                             var email = reader.GetString(3);
                             var mobile = reader.GetString(4);
+                            var doB = reader.GetDateTime(5);
+                            var yoB = reader.GetInt16(6);
+                            var gender = reader.GetString(7);
                             item.Id = id;
                             item.FirstName = firstName;
                             item.LastName = lastName;
                             item.Email = email;
                             item.Mobile = mobile;
+                            item.DoB = doB;
+                            item.YoB = yoB;
+                            item.Gender = gender.MakeGender();
                             lst.Add(item);
                         }
                     }
