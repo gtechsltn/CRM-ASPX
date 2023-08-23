@@ -66,6 +66,16 @@
 + https://learn.microsoft.com/en-us/dotnet/framework/data/adonet/sql-server-data-type-mappings
 + https://stackoverflow.com/questions/425389/c-sharp-equivalent-of-sql-server-datatypes
 
+## Navbar left and right
++ https://stackoverflow.com/questions/19733447/bootstrap-navbar-with-left-center-or-right-aligned-items
++ https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_navbar_right&stacked=h
+
+## Register and Logout function
++ https://www.aspsnippets.com/Articles/Implement-Logout-functionality-in-ASPNet-MVC.aspx
++ https://www.c-sharpcorner.com/UploadFile/raj1979/how-to-make-custom-login-register-and-logout-in-mvc-4-usin/
++ https://dev.to/skipperhoa/login-and-register-using-asp-net-mvc-5-3i0g
++ https://hiepsiit.com/detail/aspxmvc/asp-net-mvc/login-va-register
+
 ## Logging
 + ..\Src\WebApplication1\logs\debug-appending.log
 + ..\Src\WebApplication1\logs\debug-rolling.log
