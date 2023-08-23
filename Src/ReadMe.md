@@ -41,3 +41,14 @@
 + **Data Source=localhost;Initial Catalog=CRMS;Integrated Security=SSPI;MultipleActiveResultSets=True**
 + Connection String in Web.config
 + https://stackoverflow.com/questions/5484771/sql-providername-in-web-config
+
+## Logging
++ ..\Src\WebApplication1\logs\debug-appending.log
++ ..\Src\WebApplication1\logs\debug-rolling.log
++ ..\Src\WebApplication1\logs\traceroll.day.log
++ ..\Src\WebApplication1\logs\traceroll.roll.log
+
+## Libraries
++ Log4net
++ Unity.Mvc5
++ Dapper.Contrib
