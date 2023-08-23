@@ -113,5 +113,13 @@ namespace WebApplication1.Controllers
 
             return View();
         }
+
+        [HttpPost]
+        [Authorize]
+        public ActionResult Logout()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index");
+        }
     }
 }

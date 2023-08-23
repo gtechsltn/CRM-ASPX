@@ -1,13 +1,10 @@
-﻿@using WebApplication1.Infrastructure
-
-@model IEnumerable<WebApplication1.Models.CustomerModel>
+﻿@model IEnumerable<WebApplication1.Models.CustomerModel>
 
 @{
     ViewBag.Title = "Trang chủ";
 }
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
 
-<script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
 
 <h1>Quản lý thông tin khách hàng</h1>
 
@@ -84,8 +81,21 @@
     </tbody>
 </table>
 
-<script>
-    $(document).ready(function () {
-        $('#myTable').DataTable();
-    });
-</script>  
+@section scripts {
+
+    <script src="@Url.Content("~/Scripts/jquery-3.4.1.min.js")"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(function () {
+            $(document).on('click', '#ctrlChangePassword', function () {
+                alert('Thay đổi mật khẩu');
+            });
+        });
+
+        $(function () {
+            $('#myTable').DataTable();
+        });
+    </script>
+}

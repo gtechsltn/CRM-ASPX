@@ -42,14 +42,20 @@
 
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
-                    <input type="submit" value="Đăng nhập" class="btn btn-default" />
+                    <input type="submit" value="Đăng nhập" class="btn btn-default" />&nbsp;
+                    <input type="button" value="Đăng ký" class="btn btn-default" id="ctrlRegister" />
                 </div>
             </div>
         </div>
     }
-
-
     <script>
+
+        $(document).ready(function () {
+            $(document).on('click', '#ctrlRegister', function () {
+                alert('Đăng ký');
+            });
+        });
+
         $(document).ready(function () {
             $('#UserName').val('Admin');
             $('#Password').val('Abc@123$');
