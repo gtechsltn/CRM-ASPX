@@ -159,6 +159,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\LoginViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -212,11 +213,11 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Helpers\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
@@ -246,6 +247,14 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\WebApplication1.Business\WebApplication1.Business.csproj">
+      <Project>{e13bf19a-2986-4d3a-a60c-b73732f4472d}</Project>
+      <Name>WebApplication1.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WebApplication1.DataAccess\WebApplication1.DataAccess.csproj">
+      <Project>{4c19ef1b-3c78-46bb-a880-f5f08e36ae17}</Project>
+      <Name>WebApplication1.DataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WebApplication1.Infrastructure\WebApplication1.Infrastructure.csproj">
       <Project>{BC2552F0-06F7-481D-9174-82D4F9FCEDED}</Project>
       <Name>WebApplication1.Infrastructure</Name>

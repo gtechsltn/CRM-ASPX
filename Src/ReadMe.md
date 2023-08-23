@@ -42,6 +42,17 @@
 + Connection String in Web.config
 + https://stackoverflow.com/questions/5484771/sql-providername-in-web-config
 
+## Forms Authentication
++ https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/security/authenticating-users-with-forms-authentication-cs
++ https://www.ifourtechnolab.com/blog/explain-forms-authentication-in-asp-net-mvc
++ https://dotnettutorials.net/lesson/authentication-and-authorization-in-mvc/
++ https://www.c-sharpcorner.com/article/forms-authentication-in-mvc/
++ https://dotnettutorials.net/lesson/forms-authentication-in-mvc/
+
+## Data Annotation
++ https://www.c-sharpcorner.com/article/model-validation-using-data-annotations-in-asp-net-mvc/
++ https://www.c-sharpcorner.com/article/data-annotations-and-validation-in-mvc/
+
 ## Logging
 + ..\Src\WebApplication1\logs\debug-appending.log
 + ..\Src\WebApplication1\logs\debug-rolling.log
