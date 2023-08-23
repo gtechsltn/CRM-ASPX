@@ -102,6 +102,8 @@
 + AutoNumeric.js
 
 # Serene Platform and Framework
++ CMS, CRM, ERP
++ https://serenity.is
 + https://marketplace.visualstudio.com/items?itemName=VolkanCeylan.SereneSerenityApplicationTemplate
 + https://marketplace.visualstudio.com/items?itemName=VolkanCeylan.SereneMvc
-+ CMS, CRM, ERP
++ https://serenity.is/docs/getting_started/used_tools_and_libraries
