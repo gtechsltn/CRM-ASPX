@@ -79,3 +79,7 @@
 ## SmartStore
 + Net FW: https://github.com/smartstore/SmartStoreNET
 + Net Core: https://github.com/smartstore/Smartstore
+
+## Google reCaptcha v2
++ **How to use reCaptcha v2 in ASP.NET**
++ https://gist.github.com/gtechsltn/9f7443efcec807579430014d817e8553
