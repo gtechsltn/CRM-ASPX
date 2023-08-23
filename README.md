@@ -2,6 +2,23 @@
 + https://github.com/gtechsltn/CRM
 + https://themeforest.net/search/crm?compatible_with=Bootstrap
 
+## Tech Stack
++ C#
++ SQL
++ .NET Framework
++ .NET Core
++ ASP.NET
++ ASP.NET Core
++ SQL Server Database
++ Visual Studio
++ Visual Studio Code
++ HTML
++ CSS
++ JavaScript Frameworks
++ Web API
++ Microservices
++ Blazor
+
 # HTML5 Boilerplate
 + https://www.heliossolutions.co/blog/boilerplate-or-bootstrap/
 + https://github.com/gtechsltn/Front-end-Developer-Interview-Questions
@@ -100,6 +117,7 @@
 + Select2
 + DataTables
 + AutoNumeric.js
++ Toastr
 
 # Serene Platform and Framework
 + CMS, CRM, ERP
