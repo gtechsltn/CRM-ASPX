@@ -101,6 +101,7 @@
 + DataTables
 + AutoNumeric.js
 
-# Serene Framework
+# Serene Platform and Framework
 + https://marketplace.visualstudio.com/items?itemName=VolkanCeylan.SereneSerenityApplicationTemplate
 + https://marketplace.visualstudio.com/items?itemName=VolkanCeylan.SereneMvc
++ CMS, CRM, ERP
