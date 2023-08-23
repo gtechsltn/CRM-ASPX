@@ -12,6 +12,12 @@
 # Project Plan
 + https://docs.google.com/spreadsheets/d/1eNtpyN6KS4yfSc6q8iavuXgJvzaUogWvf6YYg-S7LOQ/
 
+## Libraries
++ Log4net
++ Unity.Mvc5
++ Dapper.Contrib
++ DataTables
+
 # How to debug
 + Git clone: https://github.com/gtechsltn/CRM-ASPX/
 + Create DB: **CRMS**
@@ -39,7 +45,7 @@
 
 ## Connection String
 + **Data Source=localhost;Initial Catalog=CRMS;Integrated Security=SSPI;MultipleActiveResultSets=True**
-+ Connection String in Web.config
++ .NET Framework Data Provider for SQL Server in Connection String in web.config
 + https://stackoverflow.com/questions/5484771/sql-providername-in-web-config
 
 ## Forms Authentication
@@ -53,13 +59,11 @@
 + https://www.c-sharpcorner.com/article/model-validation-using-data-annotations-in-asp-net-mvc/
 + https://www.c-sharpcorner.com/article/data-annotations-and-validation-in-mvc/
 
+## DataTables
++ https://www.c-sharpcorner.com/article/using-jquery-datatable-with-asp-net-mvc-client-side/
+
 ## Logging
 + ..\Src\WebApplication1\logs\debug-appending.log
 + ..\Src\WebApplication1\logs\debug-rolling.log
 + ..\Src\WebApplication1\logs\traceroll.day.log
 + ..\Src\WebApplication1\logs\traceroll.roll.log
-
-## Libraries
-+ Log4net
-+ Unity.Mvc5
-+ Dapper.Contrib

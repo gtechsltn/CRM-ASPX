@@ -1,5 +1,5 @@
 ﻿using log4net;
-using log4net.Repository.Hierarchy;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Diagnostics;
@@ -39,7 +39,7 @@ namespace WebApplication1.Controllers
             {
                 var userName = loginViewModel.UserName;
                 var password = loginViewModel.Password;
-                var (errorMsg, loginSuccess) = _accountService.Login(userName, password);                
+                var (errorMsg, loginSuccess) = _accountService.Login(userName, password);
                 if (!string.IsNullOrEmpty(errorMsg))
                 {
                     logger.Error(errorMsg);
@@ -63,7 +63,8 @@ namespace WebApplication1.Controllers
             string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             Debug.WriteLine(connectionString); // => Data Source=localhost;Initial Catalog=CRMS;Integrated Security=SSPI;MultipleActiveResultSets=True
 
-            string cmdText = "SELECT TOP 10 [Id], [UserName], [Password] FROM [dbo].[User]";
+            var lst = new List<CustomerModel>();
+            string cmdText = "SELECT [Id], [FirstName], [LastName], [Email], [Mobile] FROM [dbo].[Customer]";
             using (var conn = new SqlConnection(connectionString))
             {
                 conn.Open();
@@ -73,15 +74,23 @@ namespace WebApplication1.Controllers
                     {
                         while (reader.Read())
                         {
+                            var item = new CustomerModel();
                             var id = reader.GetInt32(0);
-                            var userName = reader.GetString(1);
-                            var passwordDB = reader.GetString(2);
-                            Debug.WriteLine($"Id: {id}, UserName: {userName}, Password: {passwordDB},");
+                            var firstName = reader.GetString(1);
+                            var lastName = reader.GetString(2);
+                            var email = reader.GetString(3);
+                            var mobile = reader.GetString(4);
+                            item.Id = id;
+                            item.FirstName = firstName;
+                            item.LastName = lastName;
+                            item.Email = email;
+                            item.Mobile = mobile;
+                            lst.Add(item);
                         }
                     }
                 }
             }
-            return View();
+            return View(lst);
         }
 
         public ActionResult About()
