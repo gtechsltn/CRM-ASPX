@@ -1,8 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
-using WebApplication1.Helpers;
 
-namespace WebApplication1.Models
+namespace WebApplication1.DTO
 {
     public class CustomerModel
     {
@@ -25,10 +24,10 @@ namespace WebApplication1.Models
         public DateTime DoB { get; set; }
 
         [DisplayName("Ngày sinh")]
-        public string DoBInStr { get { return DoB.ShowDateOnly(); } }
+        public string DoBInStr { get; set; }
 
         [DisplayName("Năm sinh")]
-        public short YoB { get; set; } // => SmallInt
+        public short YoB { get; set; }
 
         [DisplayName("Giới tính")]
         public string Gender { get; set; }

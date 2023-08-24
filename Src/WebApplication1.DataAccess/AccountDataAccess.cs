@@ -17,7 +17,7 @@ namespace WebApplication1.DataAccess
             _connString = connString;
         }
 
-        public (string, UserDto) GetUserInfoByUserName(string username)
+        public (string, UserDto) GetUserInfoByUserName(string userName)
         {
             var dto = new UserDto();
             var errorMsg = string.Empty;
@@ -31,18 +31,18 @@ namespace WebApplication1.DataAccess
                     using (var cmd = new SqlCommand(cmdText, conn))
                     {
                         cmd.Parameters.Clear();
-                        cmd.Parameters.AddWithValue("@UserName", username);
+                        cmd.Parameters.AddWithValue("@UserName", userName);
 
                         using (var reader = cmd.ExecuteReader())
                         {
                             while (reader.Read())
                             {
                                 var id = reader.GetInt32(0);
-                                var userName = reader.GetString(1);
+                                var userNameDb = reader.GetString(1);
                                 var password = reader.GetString(2);
-                                Debug.WriteLine($"Id: {id}, UserName: {userName}, Password: {password},");
+                                Debug.WriteLine($"Id: {id}, UserName: {userNameDb}, Password: {password},");
                                 dto.Id = id;
-                                dto.UserName = userName;
+                                dto.UserName = userNameDb;
                                 dto.Password = password;
                             }
                         }

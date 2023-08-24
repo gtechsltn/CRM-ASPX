@@ -2,6 +2,6 @@
 {
     public interface IAccountService
     {
-        (string, bool) Login(string username, string password);
+        (string, bool) Login(string userName, string password);
     }
 }

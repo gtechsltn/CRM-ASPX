@@ -24,6 +24,8 @@ namespace WebApplication1
             container.RegisterType<ICryptoService, CryptoService>();
             container.RegisterType<IAccountService, AccountService>();
             container.RegisterType<IAccountDataAccess, AccountDataAccess>();
+            container.RegisterType<ICustomerService, CustomerService>();
+            container.RegisterType<ICustomerDataAccess, CustomerDataAccess>();
 
             DependencyResolver.SetResolver(new UnityDependencyResolver(container));
         }

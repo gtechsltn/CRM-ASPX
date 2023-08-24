@@ -31,6 +31,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.2.0.78\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Contrib, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Dapper.Contrib.2.0.78\lib\net461\Dapper.Contrib.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -43,7 +49,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AccountDataAccess.cs" />
+    <Compile Include="CustomerDataAccess.cs" />
     <Compile Include="IAccountDataAccess.cs" />
+    <Compile Include="ICustomerDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +59,13 @@
       <Project>{6A816965-0AEB-4551-B0E3-6913A853C0D0}</Project>
       <Name>WebApplication1.DTO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\WebApplication1.Infrastructure\WebApplication1.Infrastructure.csproj">
+      <Project>{bc2552f0-06f7-481d-9174-82d4f9fceded}</Project>
+      <Name>WebApplication1.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

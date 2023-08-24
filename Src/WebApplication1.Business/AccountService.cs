@@ -14,9 +14,9 @@ namespace WebApplication1.Business
             _accountDataAccess = accountDataAccess;
         }
 
-        public (string, bool) Login(string username, string password)
+        public (string, bool) Login(string userName, string password)
         {
-            var (errorMsg, userDto) = _accountDataAccess.GetUserInfoByUserName(username);
+            var (errorMsg, userDto) = _accountDataAccess.GetUserInfoByUserName(userName);
             if (!string.IsNullOrWhiteSpace(errorMsg))
             {
                 return (errorMsg, false);

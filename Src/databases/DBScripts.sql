@@ -13,6 +13,9 @@ CREATE TABLE [dbo].[Role](
 )
 GO
 
+ALTER TABLE [dbo].[Role] ADD CONSTRAINT Constraint_Role_Name UNIQUE ([Name])
+GO
+
 SET IDENTITY_INSERT [dbo].[Role] ON
 
 INSERT INTO [dbo].[Role]([Id],[Name]) VALUES (1, N'Admin')
@@ -25,7 +28,8 @@ SET IDENTITY_INSERT [dbo].[Role] OFF
 --------------------      --------------------
 IF (EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'dbo' AND TABLE_NAME = 'User'))
 BEGIN
-    DROP TABLE [dbo].[User]
+    DROP TABLE [dbo].[Customer]
+	DROP TABLE [dbo].[User]
 END
 
 CREATE TABLE [dbo].[User](
@@ -35,11 +39,14 @@ CREATE TABLE [dbo].[User](
 )
 GO
 
+ALTER TABLE [dbo].[User] ADD CONSTRAINT Constraint_User_UserName UNIQUE ([UserName])
+GO
+
 SET IDENTITY_INSERT [dbo].[User] ON
 
 INSERT INTO [dbo].[User]([Id],[UserName],[Password]) VALUES (1, N'Admin','LMANlCOGRZSajDZOn18GDA==')
-INSERT INTO [dbo].[User]([Id],[UserName],[Password]) VALUES (2, N'manh','LMANlCOGRZSajDZOn18GDA==')
-INSERT INTO [dbo].[User]([Id],[UserName],[Password]) VALUES (3, N'chien','LMANlCOGRZSajDZOn18GDA==')
+INSERT INTO [dbo].[User]([Id],[UserName],[Password]) VALUES (2, N'Manh','LMANlCOGRZSajDZOn18GDA==')
+INSERT INTO [dbo].[User]([Id],[UserName],[Password]) VALUES (3, N'Chien','LMANlCOGRZSajDZOn18GDA==')
 
 SET IDENTITY_INSERT [dbo].[User] OFF
 
@@ -85,15 +92,21 @@ CREATE TABLE [dbo].[Customer](
 	[Mobile] [nvarchar](50) NULL,
 	[Mobile2] [nvarchar](50) NULL,
 	[Gender] [varchar](1) NULL,
-	[Facebook] [nvarchar](50) NULL,
-	[Facebook2] [nvarchar](50) NULL,
+	[Facebook] [nvarchar](200) NULL,
+	[Facebook2] [nvarchar](200) NULL,
 	[Hobbies] [nvarchar](500) NULL,
 	[Note] [nvarchar](500) NULL,
+	[Owner] [nvarchar](50) NULL,
 )
+GO
+
+ALTER TABLE [dbo].[Customer] ADD FOREIGN KEY ([Owner]) REFERENCES [dbo].[User]([UserName]);
 GO
 
 SET IDENTITY_INSERT [dbo].[Customer] ON
 
-INSERT INTO [dbo].[Customer]([Id],[FirstName],[LastName],[CCCD],[Address],[DoB],[YoB],[Email],[Mobile],[Gender],[Facebook],[Hobbies],[Note]) VALUES (1,N'Mạnh',N'Nguyễn Viết',N'027083000720',N'Tecco Garden, Tứ Hiệp, Thanh Trì, Hà Nội','1983-06-25 15:50:00.000',1983,N'manhng83@gmail.com',N'0982411958','M',N'https://www.facebook.com/manh.nguyenviet.167189',N'Đá bóng, Bóng chuyền hơi',N'Lập trình viên')
+INSERT INTO [dbo].[Customer]([Id],[FirstName],[LastName],[CCCD],[Address],[DoB],[YoB],[Email],[Mobile],[Gender],[Facebook],[Hobbies],[Note],[Owner]) VALUES (1, N'Mạnh', N'Nguyễn Viết', N'027083000720', N'Tecco Garden, Tứ Hiệp, Thanh Trì, Hà Nội','1983-06-25 15:50:00.000',1983, N'manhng83@gmail.com', N'0982411958','M', N'https://www.facebook.com/manh.nguyenviet.167189', N'Đá bóng, Bóng chuyền hơi', N'Lập trình viên', N'Manh')
+
+INSERT INTO [dbo].[Customer]([Id],[FirstName],[LastName],[CCCD],[Address],[DoB],[YoB],[Email],[Mobile],[Gender],[Facebook],[Hobbies],[Note],[Owner]) VALUES (2, N'Chiến', N'Nguyễn Văn', N'027201000201', N'Trạm Lộ, Thuận Thành, Bắc Ninh','2001-06-07 15:50:00.000',2001, N'chien672001@gmail.com', N'0852942023','M', N'https://www.facebook.com/profile.php?id=61550293734940', N'Game', N'Lập trình viên', N'Chien')
 
 SET IDENTITY_INSERT [dbo].[Customer] OFF

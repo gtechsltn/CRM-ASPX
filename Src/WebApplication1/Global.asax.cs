@@ -22,7 +22,12 @@ namespace WebApplication1
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            //Configure Unity.Mvc5
             UnityConfig.RegisterComponents();
+
+            //Configure AutoMapper
+            AutoMapperConfiguration.Configure();
         }
     }
 }

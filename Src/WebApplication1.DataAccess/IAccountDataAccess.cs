@@ -4,6 +4,6 @@ namespace WebApplication1.DataAccess
 {
     public interface IAccountDataAccess
     {
-        (string, UserDto) GetUserInfoByUserName(string username);
+        (string, UserDto) GetUserInfoByUserName(string userName);
     }
 }

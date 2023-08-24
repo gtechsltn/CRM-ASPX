@@ -1,13 +1,12 @@
 ﻿using log4net;
 using System.Collections.Generic;
 using System.Configuration;
-using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Security;
 using WebApplication1.Business;
-using WebApplication1.Helpers;
+using WebApplication1.DTO;
 using WebApplication1.Infrastructure;
 using WebApplication1.Models;
 
@@ -19,11 +18,13 @@ namespace WebApplication1.Controllers
         private static readonly ILog logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
         private readonly ICryptoService _cryptoService;
         private readonly IAccountService _accountService;
+        private readonly ICustomerService _customerService;
 
-        public HomeController(ICryptoService cryptoService, IAccountService accountService)
+        public HomeController(ICryptoService cryptoService, IAccountService accountService, ICustomerService customerService)
         {
             _cryptoService = cryptoService;
             _accountService = accountService;
+            _customerService = customerService;
         }
 
         [AllowAnonymous]
@@ -57,6 +58,18 @@ namespace WebApplication1.Controllers
 
         public ActionResult Index()
         {
+            // Retrieve the current user's username
+            string owner = System.Web.HttpContext.Current.User.Identity.Name;
+            Debug.WriteLine($"Owner: {owner}");
+
+            // Retrieve the current user's username
+            string userName = User.Identity.Name;
+            Debug.WriteLine($"UserName: {userName}");
+
+            // Check if the user is authenticated
+            bool isAuthenticated = User.Identity.IsAuthenticated;
+            Debug.WriteLine($"IsAuthenticated: {isAuthenticated}");
+
             string passwordPlainText = "Abc@123$";
             string password = _cryptoService.Encrypt(passwordPlainText);
             Debug.WriteLine(password); // => "LMANlCOGRZSajDZOn18GDA=="
@@ -64,38 +77,10 @@ namespace WebApplication1.Controllers
             string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             Debug.WriteLine(connectionString); // => Data Source=localhost;Initial Catalog=CRMS;Integrated Security=SSPI;MultipleActiveResultSets=True
 
-            var lst = new List<CustomerModel>();
-            string cmdText = "SELECT [Id], [FirstName], [LastName], [Email], [Mobile], [DoB], [YoB], [Gender] FROM [dbo].[Customer]";
-            using (var conn = new SqlConnection(connectionString))
+            var (errorMsg, lst) = _customerService.GetCustomerByOwner(userName);
+            if (!string.IsNullOrEmpty(errorMsg))
             {
-                conn.Open();
-                using (var cmd = new SqlCommand(cmdText, conn))
-                {
-                    using (var reader = cmd.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            var item = new CustomerModel();
-                            var id = reader.GetInt32(0);
-                            var firstName = reader.GetString(1);
-                            var lastName = reader.GetString(2);
-                            var email = reader.GetString(3);
-                            var mobile = reader.GetString(4);
-                            var doB = reader.GetDateTime(5);
-                            var yoB = reader.GetInt16(6);
-                            var gender = reader.GetString(7);
-                            item.Id = id;
-                            item.FirstName = firstName;
-                            item.LastName = lastName;
-                            item.Email = email;
-                            item.Mobile = mobile;
-                            item.DoB = doB;
-                            item.YoB = yoB;
-                            item.Gender = gender.MakeGender();
-                            lst.Add(item);
-                        }
-                    }
-                }
+                return View(new List<CustomerModel>());
             }
             return View(lst);
         }

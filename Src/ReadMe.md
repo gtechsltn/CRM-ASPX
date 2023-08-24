@@ -81,3 +81,18 @@
 + ..\Src\WebApplication1\logs\debug-rolling.log
 + ..\Src\WebApplication1\logs\traceroll.day.log
 + ..\Src\WebApplication1\logs\traceroll.roll.log
+
+## SQL UNIQUE
++ Bảng User không thể có 2 bản ghi trùng UserName
++ https://www.w3schools.com/sql/sql_unique.asp
+
+## SQL FOREIGN KEY
++ Trường Owner của bảng Customer chính là UserName của bảng User
++ https://www.w3schools.com/sql/sql_foreignkey.asp
+
+## AutoMapper
++ For .NET Core
++ https://github.com/gtechsltn/Automapper.Sample
++ For .NET Framework
++ https://github.com/gtechsltn/SocialGoal
++ https://github.com/gtechsltn/GigHub
