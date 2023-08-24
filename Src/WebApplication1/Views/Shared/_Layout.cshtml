@@ -4,10 +4,17 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Quản lý thông tin khách hàng</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="@Url.Content("~/Images/apple-touch-icon.png")">
+    <link rel="icon" type="image/png" sizes="32x32" href="@Url.Content("~/Images/favicon-32x32.png")">
+    <link rel="icon" type="image/png" sizes="16x16" href="@Url.Content("~/Images/favicon-16x16.png")">
+    <link rel="manifest" href="@Url.Content("~/site.webmanifest")">
+
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
+    <!-- START NAVIGATION -->
     <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
         <div class="container">
             @Html.ActionLink("CRMS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
@@ -42,13 +49,44 @@
             </div>
         </div>
     </nav>
+    <!-- END NAVIGATION -->
+    <!-- START BODY -->
     <div class="container body-content">
         @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Quản lý thông tin khách hàng</p>
+    </div>
+    <!-- END BODY -->
+    <!-- START FOOTER -->
+    <div class="container container-footer">
+        <footer class="blog-footer ">
+            <ul class="nav blog-social mx-auto justify-content-center">
+                <li>
+                    <a class="item-fb" data-toggle="tooltip" title="follow on Facebook" target="_blank" href="https://www.facebook.com/profile.php?id=61550293734940" rel="external nofollow" style="width:48px;height:48px;margin-left: 5px;">
+                        <img src="facebook-48x48.png" alt="follow on Facebook" title="follow on Facebook" style="width: 100%;height: 100%;" />
+                    </a>
+                </li>
+                <li>
+                    <a class="item-fb" data-toggle="tooltip" title="follow on Facebook" target="_blank" href="https://www.facebook.com/groups/1278275502874169" rel="external nofollow" style="width:48px;height:48px;margin-left: 5px;">
+                        <img src="facebook-48x48.png" alt="follow on Facebook" title="follow on Facebook" style="width: 100%;height: 100%;" />
+                    </a>
+                </li>
+                <li>
+                    <a class="item-gp" data-toggle="tooltip" title="follow on Zalo" target="_blank" href="https://zalo.me/84852942023" rel="external nofollow" style="width:48px;height:48px;margin-left: 5px;">
+                        <img src="zalo-48x48.png" alt="follow on Zalo" title="follow on Zalo" style="width: 100%;height: 100%;" />
+                    </a>
+                </li>
+                <li>
+                    <a class="item-gp" data-toggle="tooltip" title="follow on Zalo" target="_blank" href="https://zalo.me/g/gsmhfz599" rel="external nofollow" style="width:48px;height:48px;margin-left: 5px;">
+                        <img src="zalo-48x48.png" alt="follow on Zalo" title="follow on Zalo" style="width: 100%;height: 100%;" />
+                    </a>
+                </li>
+            </ul>
+            <div class="blog-copyright mx-auto mt-3 text-center">
+                <span class="d-block">&copy; <%=DateTime.Now.Year %></span>
+                <span>Designed by <a href="http://blogengine.io/themes/" rel="nofollow" target="_blank">BlogEngine</a></span>
+            </div>
         </footer>
     </div>
+    <!-- END FOOTER -->
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")

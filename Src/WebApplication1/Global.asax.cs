@@ -29,5 +29,13 @@ namespace WebApplication1
             //Configure AutoMapper
             AutoMapperConfiguration.Configure();
         }
+
+        protected void Application_Error()
+        {
+            var ex = Server.GetLastError();
+
+            //log the error!
+            logger.Error(ex);
+        }
     }
 }

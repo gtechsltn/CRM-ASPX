@@ -96,3 +96,7 @@
 + For .NET Framework
 + https://github.com/gtechsltn/SocialGoal
 + https://github.com/gtechsltn/GigHub
+
+## Error Handling
++ https://stackify.com/aspnet-mvc-error-handling/
++ https://www.c-sharpcorner.com/UploadFile/mscratnesh/exception-handling-in-mvc/
