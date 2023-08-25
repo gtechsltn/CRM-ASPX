@@ -75,18 +75,21 @@ namespace WebApplication1.Controllers
             Debug.WriteLine($"IsAuthenticated: {isAuthenticated}");
 
             string passwordPlainText = "Abc@123$";
-            string password = _cryptoService.Encrypt(passwordPlainText);
-            Debug.WriteLine(password); // => "LMANlCOGRZSajDZOn18GDA=="
+            string passwordEncrypted = _cryptoService.Encrypt(passwordPlainText);
+            Debug.WriteLine(passwordEncrypted); // => "LMANlCOGRZSajDZOn18GDA=="
+
+            string password = _cryptoService.Decrypt(passwordEncrypted);
+            Debug.WriteLine(password); // => "Abc@123$"
 
             string connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             Debug.WriteLine(connectionString); // => Data Source=localhost;Initial Catalog=CRMS;Integrated Security=SSPI;MultipleActiveResultSets=True
 
             var (errorMsg, lst) = _customerService.GetCustomerByOwner(userName);
-            if (!string.IsNullOrEmpty(errorMsg))
+            if (string.IsNullOrEmpty(errorMsg))
             {
-                return View(new List<CustomerModel>());
+                return View(lst);
             }
-            return View(lst);
+            return View(new List<CustomerModel>());
         }
 
         public ActionResult About()

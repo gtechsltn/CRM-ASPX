@@ -25,7 +25,7 @@ namespace WebApplication1.Controllers
         {
             logger.Info(nameof(Edit));
             var (errorMsg, dto) = _customerService.GetCustomerById(customerId, User.Identity.Name);
-            if (!string.IsNullOrEmpty(errorMsg))
+            if (string.IsNullOrEmpty(errorMsg))
             {
                 return Json(dto, JsonRequestBehavior.AllowGet);
             }
