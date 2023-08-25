@@ -45,13 +45,17 @@ namespace WebApplication1.Controllers
                 if (!string.IsNullOrEmpty(errorMsg))
                 {
                     logger.Error(errorMsg);
+                    ModelState.AddModelError("", "Có lỗi trong quá trình xử lý. Vui lòng liên hệ admin và quay lại trong thời gian tới.");
                 }
                 if (loginSuccess)
                 {
                     FormsAuthentication.SetAuthCookie(userName, false);
                     return RedirectToAction("Index", "Home");
                 }
-                ModelState.AddModelError("", "Sai tên đăng nhập hoặc mật khẩu");
+                else
+                {
+                    ModelState.AddModelError("", "Sai tên đăng nhập hoặc mật khẩu");
+                }
             }
             return View();
         }

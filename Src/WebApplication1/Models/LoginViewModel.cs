@@ -6,13 +6,13 @@ namespace WebApplication1.Models
     public class LoginViewModel
     {
         [DisplayName("Tên đăng nhập")]
-        [StringLength(50, MinimumLength = 4)]
-        [Required(ErrorMessage = "Vui lòng nhập Tên đăng nhập"), MaxLength(50)]
+        [StringLength(50, ErrorMessage = "{0} phải dài ít nhất {2} ký tự.", MinimumLength = 4)]
+        [Required(ErrorMessage = "Vui lòng nhập Tên đăng nhập")]
         public string UserName { get; set; }
 
         [DisplayName("Mật khẩu")]
-        [StringLength(50, MinimumLength = 8)]
-        [Required(ErrorMessage = "Vui lòng nhập Mật khẩu"), MaxLength(50)]
+        [StringLength(50, ErrorMessage = "{0} phải dài ít nhất {2} ký tự.", MinimumLength = 8)]
+        [Required(ErrorMessage = "Vui lòng nhập Mật khẩu")]
         public string Password { get; set; }
     }
 }

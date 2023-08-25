@@ -37,8 +37,6 @@ namespace WebApplication1.Business
             foreach (var dto in dtos)
             {
                 var model = Mapper.Map<CustomerModel>(dto);
-                model.DoBInStr = model.DoB.ShowDateOnly();
-                model.Gender = model.Gender.MakeGender();
                 lst.Add(model);
             }
             return lst;

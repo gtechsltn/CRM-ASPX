@@ -20,7 +20,7 @@
                 <thead>
                     <tr>
                         <th>
-                            @Html.DisplayNameFor(model => model.Id)
+                            <span>STT</span>
                         </th>
                         <th>
                             @Html.DisplayNameFor(model => model.LastName)
@@ -47,40 +47,44 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach (var item in Model)
-                    {
-                        <tr>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Id)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.LastName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.FirstName)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Email)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Mobile)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.DoBInStr)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.YoB)
-                            </td>
-                            <td>
-                                @Html.DisplayFor(modelItem => item.Gender)
-                            </td>
-                            <td>
-                                <a href="javascript:" data-id="@item.Id" class="btn btn-default ctrlEdit">Sửa</a>
-                                <a href="javascript:" data-id="@item.Id" class="btn btn-default ctrlDetails">Xem</a>
-                                <a href="javascript:" data-id="@item.Id" class="btn btn-default ctrlDelete">Xóa</a>
-                            </td>
-                        </tr>
+                    @{
+                        var lst = Model as List<CustomerModel>;
 
+                        for (var i = 0; i < lst.Count; i++)
+                        {
+                            var item = lst[i];
+                            <tr>
+                                <td>
+                                    @(i+1)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.LastName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FirstName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Email)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Mobile)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.DoBInStr)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.YoB)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Gender)
+                                </td>
+                                <td>
+                                    <a href="javascript:" data-id="@item.Id" class="btn btn-default ctrlEdit">Sửa</a>
+                                    <a href="javascript:" data-id="@item.Id" class="btn btn-default ctrlDetails">Xem</a>
+                                    <a href="javascript:" data-id="@item.Id" class="btn btn-default ctrlDelete">Xóa</a>
+                                </td>
+                            </tr>
+                        }
                     }
                 </tbody>
             </table>
@@ -202,7 +206,12 @@
         });
 
         $(function () {
-            $('#myTable').DataTable();
+            $('#myTable').DataTable({
+                "columnDefs": [
+                    { "orderable": true, "targets": [0, 1, 2, 3, 4, 5, 6, 7] },
+                    { "orderable": false, "targets": [8] }
+                ]
+            });
         });
 
         $(function () {
