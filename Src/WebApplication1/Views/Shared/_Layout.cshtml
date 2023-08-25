@@ -8,10 +8,13 @@
     <link rel="apple-touch-icon" sizes="180x180" href="@Url.Content("~/Images/apple-touch-icon.png")">
     <link rel="icon" type="image/png" sizes="32x32" href="@Url.Content("~/Images/favicon-32x32.png")">
     <link rel="icon" type="image/png" sizes="16x16" href="@Url.Content("~/Images/favicon-16x16.png")">
-    <link rel="manifest" href="@Url.Content("~/site.webmanifest")">
 
     @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/modernizr")
+
 </head>
 <body>
     <!-- START NAVIGATION -->
@@ -87,9 +90,6 @@
         </footer>
     </div>
     <!-- END FOOTER -->
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>

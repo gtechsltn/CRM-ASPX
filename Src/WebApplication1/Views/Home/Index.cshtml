@@ -4,93 +4,200 @@
     ViewBag.Title = "Trang chủ";
 }
 
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
+<div class="container">
 
-<h1>Quản lý thông tin khách hàng</h1>
+    <h1>Quản lý thông tin khách hàng</h1>
 
-<p>
-    @Html.ActionLink("Tạo mới", "Create")
-</p>
+    <!-- Add New -->
+    <div class="row">
+        <a href="javascript:" data-id="0" class="btn btn-default ctrlEdit">Thêm mới</a>
+    </div>
 
-<table id="myTable" class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Id)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.LastName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FirstName)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Mobile)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.DoB)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.YoB)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Gender)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Id)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.LastName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.FirstName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Email)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Mobile)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.DoBInStr)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.YoB)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Gender)
-                </td>
-                <td>
-                    @Html.ActionLink("Sửa", "Edit", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Xem", "Details", new { /* id=item.PrimaryKey */ }) |
-                    @Html.ActionLink("Xóa", "Delete", new { /* id=item.PrimaryKey */ })
-                </td>
-            </tr>
+    <!-- HTML Table -->
+    <div class="row">
+        <div style="overflow-x:auto;margin: 10px 0px" class="table-responsive">
+            <table id="myTable" class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Id)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LastName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FirstName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Email)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Mobile)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.DoB)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.YoB)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.Gender)
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Id)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LastName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FirstName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Mobile)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DoBInStr)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.YoB)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Gender)
+                            </td>
+                            <td>
+                                <a href="javascript:" data-id="@item.Id" class="btn btn-default ctrlEdit">Sửa</a>
+                                <a href="javascript:" data-id="@item.Id" class="btn btn-default ctrlDetails">Xem</a>
+                                <a href="javascript:" data-id="@item.Id" class="btn btn-default ctrlDelete">Xóa</a>
+                            </td>
+                        </tr>
 
-        }
-    </tbody>
-</table>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade modal-fullscreen" id="modalLarge" tabindex="-1" role="dialog" aria-labelledby="modalLargeLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLargeLabel">Sửa tiêu đề ở đây</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary ctrlClose" data-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-default ctrlSave">
+                    <span class="d-none d-md-inline d-md-none">Lưu lại</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div><!-- end .modal -->
 
 @section scripts {
 
-    <script src="@Url.Content("~/Scripts/jquery-3.4.1.min.js")"></script>
-
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css" />
     <script type="text/javascript" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 
     <script>
+
         $(function () {
             $(document).on('click', '#ctrlChangePassword', function () {
-                alert('Thay đổi mật khẩu');
+                console.log('Thay đổi mật khẩu');
+                $('#modalLarge').modal('show');
+            });
+        });
+
+        $(function () {
+
+            $(document).on('click', '.ctrlEdit', function (e) {
+                $('.ctrlClose').text("Thoát");
+                $('.ctrlSave').show();
+                $('.ctrlSave').text("Lưu lại");
+                let customerId = $(e.target).data('id') * 1;
+                if (customerId === 0) $('#modalLargeLabel').text('Thêm mới khách hàng');
+                else $('#modalLargeLabel').text('Sửa thông tin khách hàng');
+                console.log('Sửa thông tin khách hàng');
+                console.log('Show modal');
+                $('.modal-content .modal-body').empty();
+                $.ajax({
+                    type: "GET",
+                    url: "@Url.Action("GetDataForEdit", "Customer")",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    data: { "customerId": customerId },
+                    success: function (data) {
+
+                        // Update modal content
+                        $('.modal-content .modal-body').append(data);
+
+                        // Show modal
+                        $('#modalLarge').modal('show');
+
+                    },
+                    error: function (request, status, error) {
+                        console.log("ajax call went wrong:" + request.responseText);
+                    }
+                });
+            });
+
+            $(document).on('click', '.ctrlDetails', function (e) {
+                $('.ctrlClose').text("Thoát");
+                $('.ctrlSave').hide();
+                console.log('Xem thông tin khách hàng');
+                $('.modal-content .modal-body').empty();
+                $('#modalLargeLabel').text('Xem thông tin khách hàng');
+                $('#modalLarge').modal('show');
+            });
+
+            $(document).on('click', '.ctrlDelete', function (e) {
+                $('.ctrlClose').text("Thoát");
+                $('.ctrlSave').show();
+                $('.ctrlSave').text("Xóa");
+                console.log('Xóa thông tin khách hàng');
+                $('.modal-content .modal-body').empty();
+                $('#modalLargeLabel').text('Xóa thông tin khách hàng');
+                $('#modalLarge').modal('show');
+            });
+        });
+
+        $(function () {
+
+            $(document).on('click', '.ctrlClose', function (e) {
+                console.log('Hide modal');
+                $('#modalLarge').modal('hide');
+            });
+
+            $(document).on('click', '.ctrlSave', function (e) {
+                console.log('Save button');
+                alert('Lưu lại thành công!');
+                $('#modalLarge').modal('hide');
+            });
+        });
+
+        $(function () {
+
+            $('#modalLarge').on('shown.bs.modal', function (e) {
+                console.log('shown.bs.modal');
+            });
+
+            $('#modalLarge').on('hidden.bs.modal', function (e) {
+                console.log('hidden.bs.modal');
             });
         });
 

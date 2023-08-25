@@ -5,6 +5,8 @@ namespace WebApplication1.Business
 {
     public interface ICustomerService
     {
+        (string, CustomerDto) GetCustomerById(int customerId, string userName);
+
         (string, IEnumerable<CustomerModel>) GetCustomerByOwner(string userName);
     }
 }

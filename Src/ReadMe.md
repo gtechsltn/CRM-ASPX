@@ -100,3 +100,10 @@
 ## Error Handling
 + https://stackify.com/aspnet-mvc-error-handling/
 + https://www.c-sharpcorner.com/UploadFile/mscratnesh/exception-handling-in-mvc/
+
+## Bootstrap Modal
++ https://laracasts.com/discuss/channels/laravel/have-bootstrap-modal-open-after-ajax-loads-data
++ https://stackoverflow.com/questions/2537741/how-to-render-partial-view-into-a-string
++ https://codexworld.com/bootstrap-modal-dynamic-content-jquery-ajax-php-mysql/
++ https://www.aspdotnet-suresh.com/2016/07/jquery-show-bootstrap-modal-popup-on-button-click-with-example.html
++ https://aspsnippets.com/Articles/MVC-Partial-View-String-Render-Return-Partial-View-as-String-from-Controller-in-ASPNet-MVC.aspx

@@ -15,6 +15,11 @@ namespace WebApplication1.Business
             _customerDataAccess = customerDataAccess;
         }
 
+        public (string, CustomerDto) GetCustomerById(int customerId, string userName)
+        {
+            return _customerDataAccess.GetCustomerById(customerId, userName);
+        }
+
         public (string, IEnumerable<CustomerModel>) GetCustomerByOwner(string userName)
         {
             var (errorMsg, dtos) = _customerDataAccess.GetCustomerByOwner(userName);
