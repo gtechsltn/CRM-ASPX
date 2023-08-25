@@ -107,3 +107,6 @@
 + https://codexworld.com/bootstrap-modal-dynamic-content-jquery-ajax-php-mysql/
 + https://www.aspdotnet-suresh.com/2016/07/jquery-show-bootstrap-modal-popup-on-button-click-with-example.html
 + https://aspsnippets.com/Articles/MVC-Partial-View-String-Render-Return-Partial-View-as-String-from-Controller-in-ASPNet-MVC.aspx
+
+## Menu Navigation
++ https://codepen.io/bootstrapped/pen/KwYGwq

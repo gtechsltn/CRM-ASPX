@@ -204,5 +204,11 @@
         $(function () {
             $('#myTable').DataTable();
         });
+
+        $(function () {
+            $(document).on('click', '#ctrlLogout', function () {
+                $('#frmLogout').submit();
+            });
+         });
     </script>
 }
