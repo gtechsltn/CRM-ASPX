@@ -57,5 +57,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\WebApplication1.Infrastructure\WebApplication1.Infrastructure.csproj">
+      <Project>{bc2552f0-06f7-481d-9174-82d4f9fceded}</Project>
+      <Name>WebApplication1.Infrastructure</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
