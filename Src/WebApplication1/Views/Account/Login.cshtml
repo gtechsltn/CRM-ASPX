@@ -67,7 +67,7 @@
 
     <!-- Modal -->
     <div class="modal fade modal-fullscreen" id="modalLarge" tabindex="-1" role="dialog" aria-labelledby="modalLargeLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalLargeLabel">Sửa tiêu đề ở đây</h5>
@@ -109,23 +109,28 @@
                 //Validate Form
                 let isFormValid = $("#frmRegister").valid();
 
+                let $UserName2 = $('#UserName2').val();
+                let $Password2 = $('#Password2').val();
+
                 if (isFormValid) {
 
                     $.ajax({
                         type: "POST",
                         url: "@Url.Action("Register", "Account")",
                         data: $("#frmRegister").serialize(),
-                        success: function (data) {
+                        success: function (registerSuccess) {
 
-                            alert('Đăng ký thành công!');
+                            if (registerSuccess) {
 
-                            //$('#modalLarge').modal('hide');
-                            //$("#modalLarge").removeClass("in");
-                            $(".modal-backdrop").remove();
-                            //$('body').removeClass('modal-open');
-                            //$('body').css('padding-right', '');
-                            //$("#modalLarge").hide();
+                                alert('Đăng ký thành công!');
 
+                                $('#modalLarge').modal('hide');
+                                $(".modal-backdrop").remove();
+
+                                //Sửa thông tin đăng nhập sau khi đăng ký thành công
+                                $('#UserName').val($UserName2);
+                                $('#Password').val($Password2);
+                            }
                         },
                         error: function (request, status, error) {
                             console.log("ajax call went wrong:" + request.responseText);

@@ -12,6 +12,7 @@ namespace WebApplication1.Controllers
     public class AccountController : Controller
     {
         private static readonly ILog logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
+
         private readonly IAccountService _accountService;
 
         public AccountController(IAccountService accountService)
@@ -33,9 +34,11 @@ namespace WebApplication1.Controllers
         {
             if (ModelState.IsValid)
             {
-                var userName = loginViewModel.UserName;
-                var password = loginViewModel.Password;
+                var userName = loginViewModel.UserName.Trim();
+                var password = loginViewModel.Password.Trim();
+
                 var (errorMsg, loginSuccess) = _accountService.Login(userName, password);
+
                 if (!string.IsNullOrEmpty(errorMsg))
                 {
                     logger.Error(errorMsg);
@@ -64,14 +67,18 @@ namespace WebApplication1.Controllers
             {
                 try
                 {
-                    var (errorMsg, registerSuccess) = _accountService.Register(model.UserName2, model.Password2);
+                    string userName = model.UserName2.Trim();
+                    string password = model.Password2.Trim();
+
+                    var (errorMsg, registerSuccess) = _accountService.Register(userName, password);
+
                     if (!string.IsNullOrEmpty(errorMsg))
                     {
                         logger.Error(errorMsg);
                     }
                     if (registerSuccess)
                     {
-                        return RedirectToAction("Index", "Home");
+                        return Json(true, JsonRequestBehavior.AllowGet);
                     }
                     else
                     {
