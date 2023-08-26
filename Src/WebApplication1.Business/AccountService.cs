@@ -24,5 +24,12 @@ namespace WebApplication1.Business
             var passwordEncrypted = _cryptoService.Encrypt(password);
             return (string.Empty, string.Equals(userDto.Password, passwordEncrypted));
         }
+
+        public (string, bool) Register(string userName, string password)
+        {
+            var passwordEncrypted = _cryptoService.Encrypt(password);
+
+            return _accountDataAccess.RegisterUser(userName, passwordEncrypted);
+        }
     }
 }

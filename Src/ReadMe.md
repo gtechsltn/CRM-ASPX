@@ -110,3 +110,31 @@
 
 ## Menu Navigation
 + https://codepen.io/bootstrapped/pen/KwYGwq
+
+## Login and Return Url
++ https://www.aspsnippets.com/Articles/Forms-Authentication-Login-with-ReturnUrl-in-ASPNet-MVC.aspx
++ https://www.devargument.com/postdetails/11041/how-to-implement-return-url-functionality-for-login-page-in-aspnet-mvc-
++ https://stackoverflow.com/questions/20123612/how-am-i-supposed-to-use-returnurl-viewbag-returnurl-in-mvc-4
+
+## Logout issue
++ Try with link: ~/Account/Login?ReturnUrl=/Account/Logout
++ [Beginning ASP.NET MVC 4](https://github.com/Apress/beg-asp.net-mvc-4)
++ [Working With Html.BeginForm() and Ajax.BeginForm() in MVC 3](https://www.c-sharpcorner.com/UploadFile/3d39b4/working-with-html-beginform-and-ajax-beginform-in-mvc-3/)
+
+## Client-Side Validation
++ https://learn.microsoft.com/en-us/aspnet/mvc/overview/getting-started/introduction/adding-validation
++ https://www.aspsnippets.com/Articles/Enable-Client-Side-validation-in-ASPNet-MVC.aspx
++ [How to Enable and Disable Client-Side Validation in MVC](https://www.dotnettricks.com/learn/mvc/how-to-enable-and-disable-client-side-validation-in-mvc)
++ https://www.freecodespot.com/blog/ajax-model-validation-in-asp-net/
+
+## Modal Bootstrap Hide Not Working
++ https://stackoverflow.com/questions/23677765/bootstrap-modal-hide-is-not-working
++ https://stackoverflow.com/questions/10466129/how-to-hide-bootstrap-modal-with-javascript/29560331#29560331
+```
+$('#myModal').hide();
+```
++ =>
+```
+$('#myModal').hide();
+$('.modal-backdrop').hide();
+```

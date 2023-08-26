@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using log4net;
-using System.IO;
 using System.Reflection;
 using System.Web.Mvc;
 using WebApplication1.Business;
@@ -38,27 +37,15 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public ActionResult GetDataForEdit(int customerId)
         {
-            logger.Info(nameof(Edit));
+            logger.Info(nameof(GetDataForEdit));
             var (errorMsg, dto) = _customerService.GetCustomerById(customerId, User.Identity.Name);
             var model = new CustomerModel();
             if (string.IsNullOrEmpty(errorMsg))
             {
                 model = Mapper.Map<CustomerModel>(dto);
             }
-            string viewContent = ConvertViewToString("_EditCustomer", model);
+            string viewContent = this.ConvertViewToString("_EditCustomer", model);
             return Content(viewContent);
-        }
-
-        private string ConvertViewToString(string viewName, object model)
-        {
-            ViewData.Model = model;
-            using (StringWriter writer = new StringWriter())
-            {
-                ViewEngineResult vResult = ViewEngines.Engines.FindPartialView(ControllerContext, viewName);
-                ViewContext vContext = new ViewContext(this.ControllerContext, vResult.View, ViewData, new TempDataDictionary(), writer);
-                vResult.View.Render(vContext, writer);
-                return writer.ToString();
-            }
         }
     }
 }

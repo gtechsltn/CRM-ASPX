@@ -14,7 +14,6 @@
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
     <!-- START NAVIGATION -->
@@ -61,7 +60,7 @@
         <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
             <!-- Left -->
             <div class="me-5 d-none d-lg-block">
-                <span>Get connected with us on social networks:</span>
+                <span>Hãy kết nối với chúng tôi trên mạng xã hội:</span>
             </div>
             <!-- Left -->
             <!-- Right -->
@@ -97,11 +96,10 @@
                     <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                         <!-- Content -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            <i class="fas fa-gem me-3"></i>Company name
+                            <i class="fas fa-gem me-3"></i>Giải Pháp Công Nghệ Toàn Cầu
                         </h6>
                         <p>
-                            Here you can use rows and columns to organize your footer content. Lorem ipsum
-                            dolor sit amet, consectetur adipisicing elit.
+                            Chuyên cung cấp các giải pháp chuyển đổi số - Quản lý toàn diện doanh nghiệp.
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -109,19 +107,19 @@
                     <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            Products
+                            Công nghệ sử dụng
                         </h6>
                         <p>
-                            <a href="#!" class="text-reset">Angular</a>
+                            <a href="#!" class="text-reset">HTML, CSS, JavaScript, C#, SQL</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">React</a>
+                            <a href="#!" class="text-reset">jQuery</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Vue</a>
+                            <a href="#!" class="text-reset">Ember.js</a>
                         </p>
                         <p>
-                            <a href="#!" class="text-reset">Laravel</a>
+                            <a href="#!" class="text-reset">ASP.NET</a>
                         </p>
                     </div>
                     <!-- Grid column -->
@@ -129,7 +127,7 @@
                     <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                         <!-- Links -->
                         <h6 class="text-uppercase fw-bold mb-4">
-                            Useful links
+                            Liên kết các trang khác
                         </h6>
                         <p>
                             <a href="#!" class="text-reset">Pricing</a>
@@ -148,11 +146,11 @@
                     <!-- Grid column -->
                     <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
                         <!-- Links -->
-                        <h6 class="text-uppercase fw-bold mb-4">Liên hệ</h6>
+                        <h6 class="text-uppercase fw-bold mb-4">Liên hệ với chúng tôi</h6>
                         <p><i class="fas fa-home me-3"></i> Hà Nội, HN 100000, VN</p>
                         <p>
                             <i class="fas fa-envelope me-3"></i>
-                            info@manhng.com
+                            <a href="mailto:info@manhng.com"> Email Us</a>
                         </p>
                         <p><i class="fas fa-phone me-3"></i> + 84 98.241.1958</p>
                         <p><i class="fas fa-print me-3"></i> + 84 85.294.2023</p>
@@ -172,7 +170,10 @@
     </footer>
     <!-- END FOOTER -->
     <!-- START LOGOUT FORM -->
-    <form id="frmLogout" action="@Url.Action("Logout", "Home")" method="post"></form>
+    @using (Html.BeginForm("Logout", "Account", FormMethod.Post, new { id = "frmLogout" }))
+    {
+        @Html.AntiForgeryToken()
+    }
     <!-- END LOGOUT FORM -->
     @RenderSection("scripts", required: false)
 </body>

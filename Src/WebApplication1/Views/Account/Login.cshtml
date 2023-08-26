@@ -1,0 +1,188 @@
+﻿@model WebApplication1.Models.LoginViewModel
+
+@{
+    Layout = null;
+
+    var returnUrl = Request.QueryString["ReturnUrl"];
+
+    if (string.IsNullOrWhiteSpace(returnUrl))
+    {
+        returnUrl = ViewBag.ReturnUrl;
+    }
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Đăng nhập</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="@Url.Content("~/Images/apple-touch-icon.png")">
+    <link rel="icon" type="image/png" sizes="32x32" href="@Url.Content("~/Images/favicon-32x32.png")">
+    <link rel="icon" type="image/png" sizes="16x16" href="@Url.Content("~/Images/favicon-16x16.png")">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="container">
+
+        <h1>Đăng nhập</h1>
+
+        @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { ReturnUrl = @returnUrl }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.UserName, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.UserName, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Đăng nhập" class="btn btn-default" />&nbsp;
+                        <input type="button" value="Đăng ký" class="btn btn-default" id="ctrlRegister" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade modal-fullscreen" id="modalLarge" tabindex="-1" role="dialog" aria-labelledby="modalLargeLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalLargeLabel">Sửa tiêu đề ở đây</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary ctrlClose" data-dismiss="modal">Đóng</button>
+                    <button type="button" class="btn btn-default ctrlSave">
+                        <span class="d-none d-md-inline d-md-none">Lưu lại</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+
+        $(function () {
+
+            $(document).on('click', '.ctrlClose', function (e) {
+                console.log('Hide modal');
+                $('#modalLarge').modal('hide');
+            });
+
+            $(document).on('click', '.ctrlSave', function (e) {
+
+                e.preventDefault();
+
+                console.log('Save button');
+
+                //Validate Form
+                $("#frmRegister").validate();
+
+                //Validate Form
+                let isFormValid = $("#frmRegister").valid();
+
+                if (isFormValid) {
+
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("Register", "Account")",
+                        data: $("#frmRegister").serialize(),
+                        success: function (data) {
+
+                            alert('Đăng ký thành công!');
+
+                            //$('#modalLarge').modal('hide');
+                            //$("#modalLarge").removeClass("in");
+                            $(".modal-backdrop").remove();
+                            //$('body').removeClass('modal-open');
+                            //$('body').css('padding-right', '');
+                            //$("#modalLarge").hide();
+
+                        },
+                        error: function (request, status, error) {
+                            console.log("ajax call went wrong:" + request.responseText);
+                        }
+                    });
+
+                } else {
+                    return;
+                }
+            });
+        });
+
+        $(function () {
+
+            $('#modalLarge').on('shown.bs.modal', function (e) {
+                console.log('shown.bs.modal');
+                $('#Password2').attr('type', 'password');
+            });
+
+            $('#modalLarge').on('hidden.bs.modal', function (e) {
+                console.log('hidden.bs.modal');
+            });
+        });
+
+        $(document).ready(function () {
+            $(document).on('click', '#ctrlRegister', function () {
+                $('.ctrlClose').text("Thoát");
+                $('.ctrlSave').show();
+                $('.ctrlSave').text("Đăng ký");
+                console.log('Đăng ký tài khoản');
+                $('#modalLargeLabel').text('Đăng ký tài khoản');
+                $('#modalLarge').modal('show');
+                $('.modal-content .modal-body').empty();
+                $.ajax({
+                    type: "GET",
+                    url: "@Url.Action("GetDataForRegister", "Account")",
+                    contentType: "application/json; charset=utf-8",
+                    dataType: "html",
+                    success: function (data) {
+
+                        // Update modal content
+                        $('.modal-content .modal-body').append(data);
+
+                        // Show modal
+                        $('#modalLarge').modal('show');
+
+                    },
+                    error: function (request, status, error) {
+                        console.log("ajax call went wrong:" + request.responseText);
+                    }
+                });
+            });
+
+            $('#UserName').val('Admin');
+            $('#Password').attr('type', 'password');
+            $('#Password').val('Abc@123$');
+        });
+    </script>
+</body>
+</html>

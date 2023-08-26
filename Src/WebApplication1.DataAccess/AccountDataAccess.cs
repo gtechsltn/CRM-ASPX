@@ -57,5 +57,38 @@ namespace WebApplication1.DataAccess
 
             return (errorMsg, dto);
         }
+
+        public (string, bool) RegisterUser(string userName, string password)
+        {
+            var registerSuccess = false;
+            var errorMsg = string.Empty;
+            var rowsAffected = 0;
+            try
+            {
+                string cmdText = "INSERT INTO [dbo].[User] VALUES (@UserName, @Password)";
+                using (var conn = new SqlConnection(_connString))
+                {
+                    conn.Open();
+                    using (var cmd = new SqlCommand(cmdText, conn))
+                    {
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@UserName", userName);
+                        cmd.Parameters.AddWithValue("@Password", password);
+                        rowsAffected = cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                errorMsg = ex.ToString();
+                //throw;
+            }
+            finally
+            {
+                registerSuccess = rowsAffected > 0;
+            }
+
+            return (errorMsg, registerSuccess);
+        }
     }
 }
