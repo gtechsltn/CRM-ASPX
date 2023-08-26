@@ -126,6 +126,7 @@
 + https://www.aspsnippets.com/Articles/Enable-Client-Side-validation-in-ASPNet-MVC.aspx
 + [How to Enable and Disable Client-Side Validation in MVC](https://www.dotnettricks.com/learn/mvc/how-to-enable-and-disable-client-side-validation-in-mvc)
 + https://www.freecodespot.com/blog/ajax-model-validation-in-asp-net/
++ https://www.c-sharpcorner.com/article/asp-net-mvc5-jquery-form-validator/
 
 ## Modal Bootstrap Hide Not Working
 + https://stackoverflow.com/questions/23677765/bootstrap-modal-hide-is-not-working
