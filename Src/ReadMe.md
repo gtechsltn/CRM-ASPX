@@ -20,11 +20,17 @@
 
 # How to debug
 + Git clone: https://github.com/gtechsltn/CRM-ASPX/
-+ Create DB: **CRMS**
-+ Run DB Script: ..\databases\DBScripts.sql
-+ Open solution: ..\src\WebApplication1.sln
-+ Change Connection String: ....\src\WebApplication1\web.config
++ Open SSMS and
+  + Create DB: **CRMS**
+  + Run DB Script: ..\databases\DBScripts.sql
++ Open Visual Studio and
+  + Change Connection String: ....\src\WebApplication1\web.config
+  + Open solution file: ..\src\WebApplication1.sln
+  + Build/Rebuild solution successful
 + F5 to debug
++ Login URL: /Account/Login
+  + User: **Admin**
+  + Password: **Abc@123$**
 
 # How to
 
