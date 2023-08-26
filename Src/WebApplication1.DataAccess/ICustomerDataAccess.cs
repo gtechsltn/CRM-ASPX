@@ -7,6 +7,8 @@ namespace WebApplication1.DataAccess
     {
         (string, CustomerDto) GetCustomerById(int customerId, string userName);
 
-        (string, IEnumerable<CustomerDto>) GetCustomerByOwner(string userName);
+        (string, IEnumerable<CustomerDto>) GetCustomersByOwner(string userName);
+
+        (string errorMsg, bool saveSuccess) SaveCustomer(CustomerDto model);
     }
 }

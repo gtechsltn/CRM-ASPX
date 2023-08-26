@@ -186,14 +186,47 @@
         $(function () {
 
             $(document).on('click', '.ctrlClose', function (e) {
+
                 console.log('Hide modal');
+
                 $('#modalLarge').modal('hide');
+
             });
 
             $(document).on('click', '.ctrlSave', function (e) {
+
                 console.log('Save button');
-                alert('Lưu lại thành công!');
-                $('#modalLarge').modal('hide');
+
+                //Validate Form
+                $("#frmCustomer").validate();
+
+                //Validate Form
+                let isFormValid = $("#frmCustomer").valid();
+
+                if (isFormValid) {
+
+                    $.ajax({
+                        type: "POST",
+                        url: "@Url.Action("Save", "Customer")",
+                        data: $("#frmCustomer").serialize(),
+                        success: function (registerSuccess) {
+
+                            if (registerSuccess) {
+
+                                alert('Lưu lại thành công!');
+
+                                $('#modalLarge').modal('hide');
+                                $(".modal-backdrop").remove();
+                            }
+                        },
+                        error: function (request, status, error) {
+                            console.log("ajax call went wrong:" + request.responseText);
+                        }
+                    });
+
+                } else {
+                    return;
+                }
             });
         });
 

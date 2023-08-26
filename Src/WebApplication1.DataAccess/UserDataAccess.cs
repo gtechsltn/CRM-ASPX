@@ -6,16 +6,9 @@ using WebApplication1.DTO;
 
 namespace WebApplication1.DataAccess
 {
-    public class AccountDataAccess : IAccountDataAccess
+    public class UserDataAccess : IUserDataAccess
     {
-        private readonly string _connString;
-
-        public AccountDataAccess()
-        {
-            string connString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-            Debug.WriteLine(connString); // => Data Source=localhost;Initial Catalog=CRMS;Integrated Security=SSPI;MultipleActiveResultSets=True
-            _connString = connString;
-        }
+        private static readonly string _connString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
         public (string, UserDto) GetUserInfoByUserName(string userName)
         {
@@ -65,7 +58,7 @@ namespace WebApplication1.DataAccess
             var rowsAffected = 0;
             try
             {
-                string cmdText = "INSERT INTO [dbo].[User] VALUES (@UserName, @Password)";
+                string cmdText = "INSERT INTO [dbo].[User](UserName, Password) VALUES (@UserName, @Password)";
                 using (var conn = new SqlConnection(_connString))
                 {
                     conn.Open();

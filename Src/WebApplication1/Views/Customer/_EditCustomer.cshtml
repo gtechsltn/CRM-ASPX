@@ -6,7 +6,7 @@
 @Scripts.Render("~/bundles/bootstrap")
 @Scripts.Render("~/bundles/modernizr")
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Save", "Customer", FormMethod.Post, new { id = "frmCustomer" }))
 {
     @Html.AntiForgeryToken()
 

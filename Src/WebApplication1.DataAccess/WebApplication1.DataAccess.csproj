@@ -48,9 +48,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AccountDataAccess.cs" />
+    <Compile Include="UserDataAccess.cs" />
     <Compile Include="CustomerDataAccess.cs" />
-    <Compile Include="IAccountDataAccess.cs" />
+    <Compile Include="IUserDataAccess.cs" />
     <Compile Include="ICustomerDataAccess.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

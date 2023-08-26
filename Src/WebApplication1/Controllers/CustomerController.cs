@@ -24,14 +24,12 @@ namespace WebApplication1.Controllers
         {
             logger.Info(nameof(Edit));
             var (errorMsg, dto) = _customerService.GetCustomerById(customerId, User.Identity.Name);
-            if (string.IsNullOrEmpty(errorMsg))
+            if (!string.IsNullOrEmpty(errorMsg))
             {
-                return Json(dto, JsonRequestBehavior.AllowGet);
+                logger.Error(errorMsg);
             }
-            else
-            {
-                return Json(new CustomerDto(), JsonRequestBehavior.AllowGet);
-            }
+            return Json(string.IsNullOrEmpty(errorMsg) ? dto :
+                new CustomerDto(), JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
@@ -46,6 +44,19 @@ namespace WebApplication1.Controllers
             }
             string viewContent = this.ConvertViewToString("_EditCustomer", model);
             return Content(viewContent);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Save(CustomerModel model)
+        {
+            logger.Info(nameof(Save));
+            var (errorMsg, saveSuccess) = _customerService.SaveCustomer(model, User.Identity.Name);
+            if (!string.IsNullOrEmpty(errorMsg))
+            {
+                logger.Error(errorMsg);
+            }
+            return Json(saveSuccess, JsonRequestBehavior.AllowGet);
         }
     }
 }

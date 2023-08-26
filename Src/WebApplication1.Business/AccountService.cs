@@ -6,9 +6,9 @@ namespace WebApplication1.Business
     public class AccountService : IAccountService
     {
         private readonly ICryptoService _cryptoService;
-        private readonly IAccountDataAccess _accountDataAccess;
+        private readonly IUserDataAccess _accountDataAccess;
 
-        public AccountService(ICryptoService cryptoService, IAccountDataAccess accountDataAccess)
+        public AccountService(ICryptoService cryptoService, IUserDataAccess accountDataAccess)
         {
             _cryptoService = cryptoService;
             _accountDataAccess = accountDataAccess;

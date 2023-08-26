@@ -7,6 +7,8 @@ namespace WebApplication1.Business
     {
         (string, CustomerDto) GetCustomerById(int customerId, string userName);
 
-        (string, IEnumerable<CustomerModel>) GetCustomerByOwner(string userName);
+        (string, IEnumerable<CustomerModel>) GetCustomersByOwner(string userName);
+
+        (string errorMsg, bool saveSuccess) SaveCustomer(CustomerModel model, string userName);
     }
 }

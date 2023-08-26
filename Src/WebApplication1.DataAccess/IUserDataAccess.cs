@@ -2,7 +2,7 @@
 
 namespace WebApplication1.DataAccess
 {
-    public interface IAccountDataAccess
+    public interface IUserDataAccess
     {
         (string, UserDto) GetUserInfoByUserName(string userName);
 

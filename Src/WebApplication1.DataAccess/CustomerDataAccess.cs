@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data.SqlClient;
-using System.Diagnostics;
 using WebApplication1.DTO;
 using WebApplication1.Infrastructure;
 
@@ -10,14 +9,7 @@ namespace WebApplication1.DataAccess
 {
     public class CustomerDataAccess : ICustomerDataAccess
     {
-        private readonly string _connString;
-
-        public CustomerDataAccess()
-        {
-            string connString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
-            Debug.WriteLine(connString); // => Data Source=localhost;Initial Catalog=CRMS;Integrated Security=SSPI;MultipleActiveResultSets=True
-            _connString = connString;
-        }
+        private static readonly string _connString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
 
         public (string, CustomerDto) GetCustomerById(int customerId, string userName)
         {
@@ -87,7 +79,7 @@ namespace WebApplication1.DataAccess
             return (errorMsg, item);
         }
 
-        public (string, IEnumerable<CustomerDto>) GetCustomerByOwner(string userName)
+        public (string, IEnumerable<CustomerDto>) GetCustomersByOwner(string userName)
         {
             var lst = new List<CustomerDto>();
             var errorMsg = string.Empty;
@@ -144,6 +136,149 @@ namespace WebApplication1.DataAccess
             }
 
             return (errorMsg, lst);
+        }
+
+        public (string errorMsg, bool saveSuccess) SaveCustomer(CustomerDto dto)
+        {
+            if (dto.Id == 0) { return InsertCustomer(dto); }
+            else { return UpdateCustomer(dto); }
+        }
+
+        private (string errorMsg, bool saveSuccess) UpdateCustomer(CustomerDto dto)
+        {
+            var registerSuccess = false;
+            var errorMsg = string.Empty;
+            var rowsAffected = 0;
+            try
+            {
+                string cmdUpdate = @"UPDATE [dbo].[Customer]
+   SET [FirstName] = @FirstName
+      ,[LastName] = @LastName
+      ,[CCCD] = @CCCD
+      ,[CMND] = @CMND
+      ,[Address] = @Address
+      ,[DoB] = @DoB
+      ,[YoB] = @YoB
+      ,[Email] = @Email
+      ,[Mobile] = @Mobile
+      ,[Gender] = @Gender
+      ,[Facebook] = @Facebook
+      ,[Hobbies] = @Hobbies
+      ,[Note] = @Note
+      ,[Owner] = @Owner
+ WHERE [Id] = @Id
+";
+                using (var conn = new SqlConnection(_connString))
+                {
+                    conn.Open();
+                    using (var cmd = new SqlCommand(cmdUpdate, conn))
+                    {
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@Id", dto.Id);
+                        cmd.Parameters.AddWithValue("@FirstName", dto.FirstName);
+                        cmd.Parameters.AddWithValue("@LastName", dto.LastName);
+                        cmd.Parameters.AddWithValue("@CCCD", dto.CCCD);
+                        cmd.Parameters.AddWithValue("@CMND", dto.CMND);
+                        cmd.Parameters.AddWithValue("@Address", dto.Address);
+                        cmd.Parameters.AddWithValue("@DoB", dto.DoB);
+                        cmd.Parameters.AddWithValue("@YoB", dto.YoB);
+                        cmd.Parameters.AddWithValue("@Email", dto.Email);
+                        cmd.Parameters.AddWithValue("@Mobile", dto.Mobile);
+                        cmd.Parameters.AddWithValue("@Gender", dto.Gender);
+                        cmd.Parameters.AddWithValue("@Facebook", dto.Facebook);
+                        cmd.Parameters.AddWithValue("@Hobbies", dto.Hobbies);
+                        cmd.Parameters.AddWithValue("@Note", dto.Note);
+                        cmd.Parameters.AddWithValue("@Owner", dto.Owner);
+                        rowsAffected = cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                errorMsg = ex.ToString();
+                //throw;
+            }
+            finally
+            {
+                registerSuccess = rowsAffected > 0;
+            }
+
+            return (errorMsg, registerSuccess);
+        }
+
+        private (string errorMsg, bool saveSuccess) InsertCustomer(CustomerDto dto)
+        {
+            var registerSuccess = false;
+            var errorMsg = string.Empty;
+            var rowsAffected = 0;
+            try
+            {
+                string cmdInsert = @"INSERT INTO [dbo].[Customer]
+           ([FirstName]
+           ,[LastName]
+           ,[CCCD]
+           ,[CMND]
+           ,[Address]
+           ,[DoB]
+           ,[YoB]
+           ,[Email]
+           ,[Mobile]
+           ,[Gender]
+           ,[Facebook]
+           ,[Hobbies]
+           ,[Note]
+           ,[Owner])
+     VALUES
+           (@FirstName
+           ,@LastName
+           ,@CCCD
+           ,@CMND
+           ,@Address
+           ,@DoB
+           ,@YoB
+           ,@Email
+           ,@Mobile
+           ,@Gender
+           ,@Facebook
+           ,@Hobbies
+           ,@Note
+           ,@Owner
+		   )";
+                using (var conn = new SqlConnection(_connString))
+                {
+                    conn.Open();
+                    using (var cmd = new SqlCommand(cmdInsert, conn))
+                    {
+                        cmd.Parameters.Clear();
+                        cmd.Parameters.AddWithValue("@FirstName", dto.FirstName);
+                        cmd.Parameters.AddWithValue("@LastName", dto.LastName);
+                        cmd.Parameters.AddWithValue("@CCCD", dto.CCCD);
+                        cmd.Parameters.AddWithValue("@CMND", dto.CMND);
+                        cmd.Parameters.AddWithValue("@Address", dto.Address);
+                        cmd.Parameters.AddWithValue("@DoB", dto.DoB);
+                        cmd.Parameters.AddWithValue("@YoB", dto.YoB);
+                        cmd.Parameters.AddWithValue("@Email", dto.Email);
+                        cmd.Parameters.AddWithValue("@Mobile", dto.Mobile);
+                        cmd.Parameters.AddWithValue("@Gender", dto.Gender);
+                        cmd.Parameters.AddWithValue("@Facebook", dto.Facebook);
+                        cmd.Parameters.AddWithValue("@Hobbies", dto.Hobbies);
+                        cmd.Parameters.AddWithValue("@Note", dto.Note);
+                        cmd.Parameters.AddWithValue("@Owner", dto.Owner);
+                        rowsAffected = cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                errorMsg = ex.ToString();
+                //throw;
+            }
+            finally
+            {
+                registerSuccess = rowsAffected > 0;
+            }
+
+            return (errorMsg, registerSuccess);
         }
     }
 }

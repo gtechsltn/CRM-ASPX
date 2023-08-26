@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using WebApplication1.DTO;
-using WebApplication1.Helpers;
+using WebApplication1.Infrastructure;
 
 namespace WebApplication1
 {
@@ -15,7 +15,7 @@ namespace WebApplication1
         {
             Mapper.CreateMap<CustomerDto, CustomerModel>()
                 .ForMember(x => x.Gender, opt => opt.MapFrom(source => source.Gender.MakeGender()))
-                .ForMember(x => x.DoBInStr, opt => opt.MapFrom(source => source.DoB.ShowDateOnly()));
+                .ForMember(x => x.DoBInStr, opt => opt.MapFrom(source => (source.DoB.HasValue ? source.DoB.Value.ShowDateOnly() : string.Empty)));
         }
     }
 }
