@@ -1,6 +1,7 @@
 # Customer Management System (CRM) in ASP.NET
 + https://github.com/gtechsltn/CRM
 + https://themeforest.net/search/crm?compatible_with=Bootstrap
++ **CRUD site:www.codeproject.com**
 
 # CRUD Operations with Audit and Authentication
 + ORM-less CRUD Operations with Audit, Authentication and Authorization
