@@ -176,3 +176,6 @@ $('.modal-backdrop').hide();
 + https://stackoverflow.com/questions/70516407/ado-net-send-procedure-parameter-with-null-value
 + https://stackoverflow.com/questions/1207404/how-to-pass-a-null-variable-to-a-sql-stored-procedure-from-c-net-code
 + https://stackoverflow.com/questions/44106444/how-to-pass-null-value-to-database-from-cmd-parameters-addwithvalue-in-asp-net
+
+## ASCII Codes
++ https://www.ascii-code.com/

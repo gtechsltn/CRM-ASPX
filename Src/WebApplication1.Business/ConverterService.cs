@@ -15,13 +15,13 @@ namespace WebApplication1.Business
 
         public DateTime GetDate(string doB)
         {
-            var date = DateTime.ParseExact(doB, AppConstants.DateFormatCS, CultureInfo.InvariantCulture);
+            DateTime date = DateTime.ParseExact(doB, AppConstants.DateFormatCS, CultureInfo.InvariantCulture);
             return date;
         }
 
         public string MakeGenderInDB(string gender)
         {
-            var genderString = string.Empty;
+            string genderString = string.Empty;
 
             if (gender == null)
             {
@@ -44,7 +44,7 @@ namespace WebApplication1.Business
 
         public string MakeGenderInScreen(string gender)
         {
-            var genderString = string.Empty;
+            string genderString = string.Empty;
             if (gender == null)
             {
                 genderString = "Không biết";
@@ -69,7 +69,7 @@ namespace WebApplication1.Business
 
         public string ShowDateOnly(DateTime doB)
         {
-            var dt = doB.ToString("dd/MM/yyyy");
+            var dt = doB.ToString(AppConstants.DateFormatCS);
             return dt;
         }
     }

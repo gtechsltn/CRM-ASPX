@@ -2,7 +2,7 @@
 {
     public static class AppConstants
     {
-        public static string DateFormatCS = "dd/MM/yyyy";
-        public static string DateFormatJS = "dd/mm/yyyy";
+        public static string DateFormatCS = "MM/dd/yyyy";
+        public static string DateFormatJS = "mm/dd/yyyy";
     }
 }
