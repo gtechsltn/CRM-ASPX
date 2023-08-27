@@ -3,24 +3,24 @@
 + https://themeforest.net/search/crm?compatible_with=Bootstrap
 
 # CRUD with Search and Pagination using jQuery AJAX
-## CRUD operations with Search and Pagination
-## CRUD operations with Search and Pagination using jQuery AJAX
-## CRUD operations with Audit, Authentication and Authorization
++ **CRUD operations with Search and Pagination**
++ **CRUD operations with Search and Pagination using jQuery AJAX**
++ **CRUD operations with Audit, Authentication and Authorization**
 + https://www.itsolutionstuff.com/post/laravel-52-and-angularjs-crud-with-search-and-pagination-exampleexample.html
 + https://www.itsolutionstuff.com/post/laravel-5-and-vue-js-crud-with-pagination-example-and-demo-from-scratchexample.html
 + https://github.com/gtechsltn/Laravel-5-Angularjs-CRUD-with-Search-and-Pagination
-+ ![image](https://github.com/gtechsltn/CRM-ASPX/assets/87538251/1b093dc0-5477-4adc-b3d9-7a79c7336364)
+![image](https://github.com/gtechsltn/CRM-ASPX/assets/87538251/1b093dc0-5477-4adc-b3d9-7a79c7336364)
 + https://phppot.com/php/php-crud-with-search-and-pagination/
 + https://www.codexworld.com/codeigniter-crud-operations-with-search-pagination/
 + https://www.codexworld.com/php-crud-operations-with-search-and-pagination/
 + https://learncodeweb.com/web-development/php-crud-with-search-and-pagination-in-bootstrap-4/
-+ ![image](https://github.com/gtechsltn/CRM-ASPX/assets/87538251/be46cafc-7bae-4352-8d1d-df56c4d370c4)
+![image](https://github.com/gtechsltn/CRM-ASPX/assets/87538251/be46cafc-7bae-4352-8d1d-df56c4d370c4)
 + Add More rows into the existing table with PHP & JQuery
 + https://learncodeweb.com/php/add-more-rows-into-the-existing-table-with-php-jquery/
 + Load Dynamic Data on Page Scroll with PHP and AJAX
 + https://learncodeweb.com/php/load-dynamic-data-on-page-scroll-with-php-and-ajax/
 + https://www.sourcecodester.com/php/11909/angularjs-crud-search-sort-and-pagination-phpmysqli.html
-+ ![image](https://github.com/gtechsltn/CRM-ASPX/assets/87538251/72e65626-2c7b-4a04-ac89-71f49aedb42b)
+![image](https://github.com/gtechsltn/CRM-ASPX/assets/87538251/72e65626-2c7b-4a04-ac89-71f49aedb42b)
 
 ## Project Plan
 + https://docs.google.com/spreadsheets/d/1W1kt-aZV2nu7qaqpyBQl1ybK_xqIII2YKb7l2JJrFG4/ (Customer_Infor_Management)
