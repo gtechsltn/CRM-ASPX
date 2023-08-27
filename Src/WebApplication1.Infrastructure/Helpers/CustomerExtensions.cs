@@ -45,7 +45,7 @@ namespace WebApplication1.Infrastructure
 
         public static string ShowDateOnly(this DateTime dob)
         {
-            return dob.ToString("dd-MMM-yy");
+            return dob.ToString("dd/MM/yyyy");
         }
     }
 }

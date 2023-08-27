@@ -156,6 +156,12 @@
                         // Show modal
                         $('#modalLarge').modal('show');
 
+                        // Bootstrap Datetimepicker
+                        $('#DoBInStr').datepicker({
+                            dateFormat: "dd/MM/yyyy",
+                            autoclose: true,
+                        });
+
                     },
                     error: function (request, status, error) {
                         console.log("ajax call went wrong:" + request.responseText);

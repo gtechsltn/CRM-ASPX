@@ -17,6 +17,8 @@
 + Unity.Mvc5
 + Dapper.Contrib
 + DataTables
++ Bootstrap.Datepicker
++ Moment.js
 
 # How to debug
 + Git clone: https://github.com/gtechsltn/CRM-ASPX/
@@ -145,3 +147,8 @@ $('#myModal').hide();
 $('#myModal').hide();
 $('.modal-backdrop').hide();
 ```
+
+## Bootstrap Datepicker
++ https://tutorialdeep.com/bootstrap/
++ https://tutorialdeep.com/live-editor/bootstrap-datepicker-textbox-with-calendar-icon/
++ https://www.aspsnippets.com/Articles/Implement-Bootstrap-DatePicker-with-Calendar-Icon-Image.aspx
