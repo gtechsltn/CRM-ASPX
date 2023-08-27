@@ -3,7 +3,11 @@
 + https://themeforest.net/search/crm?compatible_with=Bootstrap
 
 ## CRUD DataTables Paging Searching Sorting with jQuery AJAX and POST in .NET Core
++ ASP.NET Core CRUD Operations With Paging, Sorting, Searching and Export Data Option
 + https://www.codeproject.com/Articles/5061500/ASP-NET-Core-CRUD-Operations-With-Paging-Sorting-S
+  + Paging Searching Sorting with AJAX POST
+  + Refresh DataTables
+  + Export Data Option
 
 ## **CRUD site:www.codeproject.com**
 + Beginners Guide for Creating GridView in ASP.NET MVC 5
