@@ -1,6 +1,16 @@
 # Customer Management System (CRM) in ASP.NET
 + https://github.com/gtechsltn/CRM
 + https://themeforest.net/search/crm?compatible_with=Bootstrap
++ https://www.codeproject.com/Articles/5061500/ASP-NET-Core-CRUD-Operations-With-Paging-Sorting-S
+  + jQuery v3.3.1
+  + Bootstrap v4.1.3
+  + Sweet Alert v2
+  ![image](https://github.com/gtechsltn/CRM-ASPX/assets/87538251/aa915c28-c194-49d8-b821-d744fbcc9dff)
+  ![image](https://github.com/gtechsltn/CRM-ASPX/assets/87538251/5b47370d-113d-4b35-95a5-23580ba5615e)
+  + https://sweetalert2.github.io/
+  + https://viblo.asia/p/tim-hieu-ve-sweetalert2-p1-djeZ1RqGlWz
+  + https://viblo.asia/p/tim-hieu-ve-sweetalert2-p2-3P0lPeGb5ox
+  + https://laracasts.com/discuss/channels/javascript/sweetalert2-confirmation-before-modal-closed-bootstrap4
 
 ## CRUD DataTables Paging Searching Sorting with jQuery AJAX and POST in .NET Core
 + ASP.NET Core CRUD Operations With Paging, Sorting, Searching and Export Data Option
