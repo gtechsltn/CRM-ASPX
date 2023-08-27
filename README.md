@@ -8,6 +8,13 @@
   + Paging Searching Sorting with AJAX POST
   + Refresh DataTables
   + Export Data Option
++ https://www.ezzylearning.net/tutorial/jquery-datatables-paging-sorting-and-searching-with-asp-net-web-api
++ https://www.ezzylearning.net/tutorial/jquery-datatables-paging-sorting-and-filtering-in-asp-net-core-using-dapper-orm
++ https://qawithexperts.com/article/asp-net/jquery-datatable-server-side-pagination-sorting-and-filterin/285
++ https://qawithexperts.com/article/asp.net/jquery-datatable-server-side-processing-with-web-api-in-aspn/72
++ https://www.c-sharpcorner.com/article/implement-crud-operations-with-sorting-searching-and-paging-using-ef-core-in-as/
++ https://github.com/gtechsltn/AdminLTE-CRUDGenerator
++ https://github.com/gtechsltn/Asp.Net-Core-CRUD-Operations-using-Admin-Template
 
 ## Audit Trail
 + https://www.codeproject.com/Articles/1019511/Audit-Trail-and-Data-Versioning-with-Csharp-and-MV
