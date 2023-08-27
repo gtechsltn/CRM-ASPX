@@ -9,6 +9,15 @@
   + Refresh DataTables
   + Export Data Option
 
+## Audit Trail
++ https://www.codeproject.com/Articles/1019511/Audit-Trail-and-Data-Versioning-with-Csharp-and-MV
+
+## SQL Server Full Text Search (Stored Procedure and Paging Searching Sorting)
++ https://www.mikesdotnetting.com/article/298/implementing-sql-server-full-text-search-in-an-asp-net-mvc-web-application-with-entity-framework
+
+## Import Excel to SQL Server (Best Way)
++ https://www.mikesdotnetting.com/article/297/the-best-way-to-import-data-from-excel-to-sql-server-via-asp-net
+
 ## **CRUD site:www.codeproject.com**
 + Beginners Guide for Creating GridView in ASP.NET MVC 5
 + Grid View with Server Side Filtering, Sorting and Paging in ASP.NET MVC 5
