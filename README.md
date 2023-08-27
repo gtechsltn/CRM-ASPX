@@ -18,6 +18,10 @@
 ## Import Excel to SQL Server (Best Way)
 + https://www.mikesdotnetting.com/article/297/the-best-way-to-import-data-from-excel-to-sql-server-via-asp-net
 
+## CRUD Operations with AngularJS
++ https://www.codeproject.com/Articles/1031858/Comprehensive-CRUD-Operations-with-AngularJS-and-W
++ https://www.codeproject.com/Tips/1074608/CRUD-in-ASP-NET-MVC-using-WebAPI-with-AngularJS
+
 ## **CRUD site:www.codeproject.com**
 + Beginners Guide for Creating GridView in ASP.NET MVC 5
 + Grid View with Server Side Filtering, Sorting and Paging in ASP.NET MVC 5
