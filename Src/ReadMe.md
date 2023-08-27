@@ -149,6 +149,30 @@ $('.modal-backdrop').hide();
 ```
 
 ## Bootstrap Datepicker
++ https://bootstrap-datepicker.readthedocs.io/en/latest/
 + https://tutorialdeep.com/bootstrap/
 + https://tutorialdeep.com/live-editor/bootstrap-datepicker-textbox-with-calendar-icon/
-+ https://www.aspsnippets.com/Articles/Implement-Bootstrap-DatePicker-with-Calendar-Icon-Image.aspx
++ https://www.aspsnippets.com/Articles/Implement-Bootstrap-DatePicker-with-Calendar-Icon-Image.aspx (Source Code)
++ https://www.aspsnippets.com/Articles/Implement-Bootstrap-DatePicker-Calendar-in-ASPNet-MVC.aspx (Source Code)
++ https://stackoverflow.com/questions/37439751/bootstrap-datepicker-format-not-recogined-by-asp-net-mvc-validator
++ https://www.c-sharpcorner.com/UploadFile/ee01e6/how-to-add-jquery-datepicker-in-mvc/
++ https://dotnetgenetics.blogspot.com/2016/06/integrate-bootstrap-datepicker-control.html (Source Code)
++ https://www.codeguru.com/dotnet/a-jquery-ui-based-date-picker-for-asp-net-mvc-5/
+
+## Bootstrap Datetimepicker
++ https://stackoverflow.com/questions/30940804/using-bootstrap-3-datetimepicker-in-asp-net-mvc-project
++ https://stackoverflow.com/questions/38026191/mvc-data-annotations-corresponding-datetime-picker-not-showing-in-firefox
++ https://www.jqueryscript.net/time-clock/Clean-Data-Timepicker-with-jQuery-Bootstrap-3.html
+
+## Bootstrap 3 Datepicker v4 Docs 
++ https://getdatepicker.com/4/
++ https://codepen.io/lordhelmchen/pen/LxMaWe
+
+## Vietnamese  translation for DataTables
++ https://datatables.net/plug-ins/i18n/Vietnamese
+
+## Assign NULL to a Sql Parameter (DBNull)
++ https://stackoverflow.com/questions/4555935/assign-null-to-a-sqlparameter
++ https://stackoverflow.com/questions/70516407/ado-net-send-procedure-parameter-with-null-value
++ https://stackoverflow.com/questions/1207404/how-to-pass-a-null-variable-to-a-sql-stored-procedure-from-c-net-code
++ https://stackoverflow.com/questions/44106444/how-to-pass-null-value-to-database-from-cmd-parameters-addwithvalue-in-asp-net

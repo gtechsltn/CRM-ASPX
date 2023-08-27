@@ -13,10 +13,12 @@ namespace WebApplication1.Controllers
         private static readonly ILog logger = LogManager.GetLogger(MethodBase.GetCurrentMethod().DeclaringType);
 
         private readonly ICustomerService _customerService;
+        private readonly IConverterService _converterService;
 
-        public CustomerController(ICustomerService customerService)
+        public CustomerController(ICustomerService customerService, IConverterService converterService)
         {
             _customerService = customerService;
+            _converterService = converterService;
         }
 
         [HttpGet]
@@ -41,8 +43,11 @@ namespace WebApplication1.Controllers
             if (string.IsNullOrEmpty(errorMsg))
             {
                 model = Mapper.Map<CustomerModel>(dto);
+                model.Gender = _converterService.MakeGenderInScreen(dto.Gender);
+                model.DoBInStr = _converterService.ShowDateOnly(dto.DoB);
             }
             string viewContent = this.ConvertViewToString("_EditCustomer", model);
+            logger.Info($"_EditCustomer: {viewContent}");
             return Content(viewContent);
         }
 
@@ -50,13 +55,17 @@ namespace WebApplication1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Save(CustomerModel model)
         {
-            logger.Info(nameof(Save));
-            var (errorMsg, saveSuccess) = _customerService.SaveCustomer(model, User.Identity.Name);
-            if (!string.IsNullOrEmpty(errorMsg))
+            if (ModelState.IsValid)
             {
-                logger.Error(errorMsg);
+                logger.Info(nameof(Save));
+                var (errorMsg, saveSuccess) = _customerService.SaveCustomer(model, User.Identity.Name);
+                if (!string.IsNullOrEmpty(errorMsg))
+                {
+                    logger.Error(errorMsg);
+                }
+                return Json(saveSuccess, JsonRequestBehavior.AllowGet);
             }
-            return Json(saveSuccess, JsonRequestBehavior.AllowGet);
+            return Json(false, JsonRequestBehavior.AllowGet);
         }
     }
 }

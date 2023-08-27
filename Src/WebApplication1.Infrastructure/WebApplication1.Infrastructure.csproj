@@ -42,10 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CryptoService.cs" />
+    <Compile Include="Helpers\AppConstants.cs" />
     <Compile Include="Helpers\AppUsers.cs" />
-    <Compile Include="Helpers\CustomerExtensions.cs" />
     <Compile Include="Helpers\AppRoles.cs" />
-    <Compile Include="Helpers\StringExtensions.cs" />
     <Compile Include="ICryptoService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

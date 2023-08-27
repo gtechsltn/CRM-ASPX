@@ -18,11 +18,15 @@ namespace WebApplication1
 
             // e.g. container.RegisterType<ITestService, TestService>();
 
-            container.RegisterType<ICryptoService, CryptoService>();
             container.RegisterType<IAccountService, AccountService>();
-            container.RegisterType<IUserDataAccess, UserDataAccess>();
+            container.RegisterType<IConverterService, ConverterService>();
+            container.RegisterType<ICryptoService, CryptoService>();
             container.RegisterType<ICustomerService, CustomerService>();
+
+            container.RegisterType<IStringExtensions, StringExtensions>();
+
             container.RegisterType<ICustomerDataAccess, CustomerDataAccess>();
+            container.RegisterType<IUserDataAccess, UserDataAccess>();
 
             // Using Unity.Mvc5 and Unity.WebApi together in a project
             // https://www.devtrends.co.uk/blog/using-unity.mvc5-and-unity.webapi-together-in-a-project

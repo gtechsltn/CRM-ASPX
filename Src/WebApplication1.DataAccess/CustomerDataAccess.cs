@@ -146,7 +146,7 @@ namespace WebApplication1.DataAccess
 
         private (string errorMsg, bool saveSuccess) UpdateCustomer(CustomerDto dto)
         {
-            var registerSuccess = false;
+            var updateSuccess = false;
             var errorMsg = string.Empty;
             var rowsAffected = 0;
             try
@@ -175,20 +175,20 @@ namespace WebApplication1.DataAccess
                     {
                         cmd.Parameters.Clear();
                         cmd.Parameters.AddWithValue("@Id", dto.Id);
-                        cmd.Parameters.AddWithValue("@FirstName", dto.FirstName);
-                        cmd.Parameters.AddWithValue("@LastName", dto.LastName);
-                        cmd.Parameters.AddWithValue("@CCCD", dto.CCCD);
-                        cmd.Parameters.AddWithValue("@CMND", dto.CMND);
-                        cmd.Parameters.AddWithValue("@Address", dto.Address);
+                        cmd.Parameters.AddWithValue("@FirstName", string.IsNullOrEmpty(dto.FirstName) ? (object)DBNull.Value : dto.FirstName);
+                        cmd.Parameters.AddWithValue("@LastName", string.IsNullOrEmpty(dto.LastName) ? (object)DBNull.Value : dto.LastName);
+                        cmd.Parameters.AddWithValue("@CCCD", string.IsNullOrEmpty(dto.CCCD) ? (object)DBNull.Value : dto.CCCD);
+                        cmd.Parameters.AddWithValue("@CMND", string.IsNullOrEmpty(dto.CMND) ? (object)DBNull.Value : dto.CMND);
+                        cmd.Parameters.AddWithValue("@Address", string.IsNullOrEmpty(dto.Address) ? (object)DBNull.Value : dto.Address);
                         cmd.Parameters.AddWithValue("@DoB", dto.DoB);
                         cmd.Parameters.AddWithValue("@YoB", dto.YoB);
-                        cmd.Parameters.AddWithValue("@Email", dto.Email);
-                        cmd.Parameters.AddWithValue("@Mobile", dto.Mobile);
-                        cmd.Parameters.AddWithValue("@Gender", dto.Gender);
-                        cmd.Parameters.AddWithValue("@Facebook", dto.Facebook);
-                        cmd.Parameters.AddWithValue("@Hobbies", dto.Hobbies);
-                        cmd.Parameters.AddWithValue("@Note", dto.Note);
-                        cmd.Parameters.AddWithValue("@Owner", dto.Owner);
+                        cmd.Parameters.AddWithValue("@Email", string.IsNullOrEmpty(dto.Email) ? (object)DBNull.Value : dto.Email);
+                        cmd.Parameters.AddWithValue("@Mobile", string.IsNullOrEmpty(dto.Mobile) ? (object)DBNull.Value : dto.Mobile);
+                        cmd.Parameters.AddWithValue("@Gender", string.IsNullOrEmpty(dto.Gender) ? (object)DBNull.Value : dto.Gender);
+                        cmd.Parameters.AddWithValue("@Facebook", string.IsNullOrEmpty(dto.Facebook) ? (object)DBNull.Value : dto.Facebook);
+                        cmd.Parameters.AddWithValue("@Hobbies", string.IsNullOrEmpty(dto.Hobbies) ? (object)DBNull.Value : dto.Hobbies);
+                        cmd.Parameters.AddWithValue("@Note", string.IsNullOrEmpty(dto.Note) ? (object)DBNull.Value : dto.Note);
+                        cmd.Parameters.AddWithValue("@Owner", string.IsNullOrEmpty(dto.Owner) ? (object)DBNull.Value : dto.Owner);
                         rowsAffected = cmd.ExecuteNonQuery();
                     }
                 }
@@ -200,15 +200,15 @@ namespace WebApplication1.DataAccess
             }
             finally
             {
-                registerSuccess = rowsAffected > 0;
+                updateSuccess = rowsAffected > 0;
             }
 
-            return (errorMsg, registerSuccess);
+            return (errorMsg, updateSuccess);
         }
 
         private (string errorMsg, bool saveSuccess) InsertCustomer(CustomerDto dto)
         {
-            var registerSuccess = false;
+            var insertSuccess = false;
             var errorMsg = string.Empty;
             var rowsAffected = 0;
             try
@@ -250,20 +250,20 @@ namespace WebApplication1.DataAccess
                     using (var cmd = new SqlCommand(cmdInsert, conn))
                     {
                         cmd.Parameters.Clear();
-                        cmd.Parameters.AddWithValue("@FirstName", dto.FirstName);
-                        cmd.Parameters.AddWithValue("@LastName", dto.LastName);
-                        cmd.Parameters.AddWithValue("@CCCD", dto.CCCD);
-                        cmd.Parameters.AddWithValue("@CMND", dto.CMND);
-                        cmd.Parameters.AddWithValue("@Address", dto.Address);
+                        cmd.Parameters.AddWithValue("@FirstName", string.IsNullOrEmpty(dto.FirstName) ? (object)DBNull.Value : dto.FirstName);
+                        cmd.Parameters.AddWithValue("@LastName", string.IsNullOrEmpty(dto.LastName) ? (object)DBNull.Value : dto.LastName);
+                        cmd.Parameters.AddWithValue("@CCCD", string.IsNullOrEmpty(dto.CCCD) ? (object)DBNull.Value : dto.CCCD);
+                        cmd.Parameters.AddWithValue("@CMND", string.IsNullOrEmpty(dto.CMND) ? (object)DBNull.Value : dto.CMND);
+                        cmd.Parameters.AddWithValue("@Address", string.IsNullOrEmpty(dto.Address) ? (object)DBNull.Value : dto.Address);
                         cmd.Parameters.AddWithValue("@DoB", dto.DoB);
                         cmd.Parameters.AddWithValue("@YoB", dto.YoB);
-                        cmd.Parameters.AddWithValue("@Email", dto.Email);
-                        cmd.Parameters.AddWithValue("@Mobile", dto.Mobile);
-                        cmd.Parameters.AddWithValue("@Gender", dto.Gender);
-                        cmd.Parameters.AddWithValue("@Facebook", dto.Facebook);
-                        cmd.Parameters.AddWithValue("@Hobbies", dto.Hobbies);
-                        cmd.Parameters.AddWithValue("@Note", dto.Note);
-                        cmd.Parameters.AddWithValue("@Owner", dto.Owner);
+                        cmd.Parameters.AddWithValue("@Email", string.IsNullOrEmpty(dto.Email) ? (object)DBNull.Value : dto.Email);
+                        cmd.Parameters.AddWithValue("@Mobile", string.IsNullOrEmpty(dto.Mobile) ? (object)DBNull.Value : dto.Mobile);
+                        cmd.Parameters.AddWithValue("@Gender", string.IsNullOrEmpty(dto.Gender) ? (object)DBNull.Value : dto.Gender);
+                        cmd.Parameters.AddWithValue("@Facebook", string.IsNullOrEmpty(dto.Facebook) ? (object)DBNull.Value : dto.Facebook);
+                        cmd.Parameters.AddWithValue("@Hobbies", string.IsNullOrEmpty(dto.Hobbies) ? (object)DBNull.Value : dto.Hobbies);
+                        cmd.Parameters.AddWithValue("@Note", string.IsNullOrEmpty(dto.Note) ? (object)DBNull.Value : dto.Note);
+                        cmd.Parameters.AddWithValue("@Owner", string.IsNullOrEmpty(dto.Owner) ? (object)DBNull.Value : dto.Owner);
                         rowsAffected = cmd.ExecuteNonQuery();
                     }
                 }
@@ -275,10 +275,10 @@ namespace WebApplication1.DataAccess
             }
             finally
             {
-                registerSuccess = rowsAffected > 0;
+                insertSuccess = rowsAffected > 0;
             }
 
-            return (errorMsg, registerSuccess);
+            return (errorMsg, insertSuccess);
         }
     }
 }

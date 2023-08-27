@@ -2,17 +2,18 @@
 using System.Collections.Generic;
 using WebApplication1.DataAccess;
 using WebApplication1.DTO;
-using WebApplication1.Infrastructure;
 
 namespace WebApplication1.Business
 {
     public class CustomerService : ICustomerService
     {
         private readonly ICustomerDataAccess _customerDataAccess;
+        private readonly IConverterService _converterService;
 
-        public CustomerService(ICustomerDataAccess customerDataAccess)
+        public CustomerService(ICustomerDataAccess customerDataAccess, IConverterService converterService)
         {
             _customerDataAccess = customerDataAccess;
+            _converterService = converterService;
         }
 
         public (string, CustomerDto) GetCustomerById(int customerId, string userName)
@@ -25,7 +26,7 @@ namespace WebApplication1.Business
             var (errorMsg, dtos) = _customerDataAccess.GetCustomersByOwner(userName);
             if (string.IsNullOrWhiteSpace(errorMsg))
             {
-                var lst = MapToListCustomerModel(dtos);
+                var lst = MapToModels(dtos);
                 return (string.Empty, lst);
             }
             return (errorMsg, null);
@@ -34,7 +35,8 @@ namespace WebApplication1.Business
         public (string errorMsg, bool saveSuccess) SaveCustomer(CustomerModel model, string userName)
         {
             var dto = Mapper.Map<CustomerDto>(model);
-            dto.Gender = model.Gender.MakeGenderInDB();
+            dto.Gender = _converterService.MakeGenderInDB(model.Gender);
+            dto.DoB = _converterService.GetDate(model.DoBInStr);
             dto.Owner = userName;
             MakeSureDtoHasRequiredFields(dto);
             return _customerDataAccess.SaveCustomer(dto);
@@ -59,25 +61,16 @@ namespace WebApplication1.Business
                     if (string.IsNullOrWhiteSpace(dto.Owner)) dto.Owner = customerDB.Owner;
                 }
             }
-
-            if (string.IsNullOrWhiteSpace(dto.CCCD)) dto.CCCD = string.Empty;
-            if (string.IsNullOrWhiteSpace(dto.CMND)) dto.CMND = string.Empty;
-            if (string.IsNullOrWhiteSpace(dto.Address)) dto.Address = string.Empty;
-            if (string.IsNullOrWhiteSpace(dto.Email)) dto.Email = string.Empty;
-            if (string.IsNullOrWhiteSpace(dto.Mobile)) dto.Mobile = string.Empty;
-            if (string.IsNullOrWhiteSpace(dto.Gender)) dto.Gender = string.Empty;
-            if (string.IsNullOrWhiteSpace(dto.Facebook)) dto.Facebook = string.Empty;
-            if (string.IsNullOrWhiteSpace(dto.Hobbies)) dto.Hobbies = string.Empty;
-            if (string.IsNullOrWhiteSpace(dto.Note)) dto.Note = string.Empty;
-            if (string.IsNullOrWhiteSpace(dto.Owner)) dto.Owner = string.Empty;
         }
 
-        private IEnumerable<CustomerModel> MapToListCustomerModel(IEnumerable<CustomerDto> dtos)
+        private IEnumerable<CustomerModel> MapToModels(IEnumerable<CustomerDto> dtos)
         {
             var lst = new List<CustomerModel>();
             foreach (var dto in dtos)
             {
                 var model = Mapper.Map<CustomerModel>(dto);
+                model.Gender = _converterService.MakeGenderInScreen(dto.Gender);
+                model.DoBInStr = _converterService.ShowDateOnly(dto.DoB);
                 lst.Add(model);
             }
             return lst;
