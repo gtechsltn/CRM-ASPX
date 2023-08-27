@@ -2,6 +2,12 @@
 + https://github.com/gtechsltn/CRM
 + https://themeforest.net/search/crm?compatible_with=Bootstrap
 
+# CRUD Operations with Audit and Authentication
++ ORM-less CRUD Operations with Audit, Authentication and Authorization
++ https://www.codeproject.com/Articles/5324641/ORM-less-CRUD-Operations-with-Audit-Authentication
++ Audit Trail Implementation in ASP.NET Core with Entity Framework Core
++ https://codewithmukesh.com/blog/audit-trail-implementation-in-aspnet-core/
+ 
 # CRUD with Search and Pagination using jQuery AJAX
 + **CRUD operations with Search and Pagination**
 + **CRUD operations with Search and Pagination using jQuery AJAX**
