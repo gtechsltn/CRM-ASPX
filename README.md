@@ -7,7 +7,13 @@
 + https://www.codeproject.com/Articles/5324641/ORM-less-CRUD-Operations-with-Audit-Authentication
 + Audit Trail Implementation in ASP.NET Core with Entity Framework Core
 + https://codewithmukesh.com/blog/audit-trail-implementation-in-aspnet-core/
- 
+
+# CRUD DevExpress
++ Manage Web API Role-based CRUD Permissions via a XAF Desktop/Blazor Admin UI with OAuth2
++ https://www.youtube.com/watch?v=aV8YJ7LjW74
++ Authenticate Users & Authorize CRUD Operations in .NET MAUI Apps with Web API Service & EF Core
++ https://www.youtube.com/watch?v=XPbJw-P0eIE
+
 # CRUD with Search and Pagination using jQuery AJAX
 + **CRUD operations with Search and Pagination**
 + **CRUD operations with Search and Pagination using jQuery AJAX**
