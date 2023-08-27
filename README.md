@@ -2,6 +2,10 @@
 + https://github.com/gtechsltn/CRM
 + https://themeforest.net/search/crm?compatible_with=Bootstrap
 
+## Project Plan
++ https://docs.google.com/spreadsheets/d/1W1kt-aZV2nu7qaqpyBQl1ybK_xqIII2YKb7l2JJrFG4/ (Customer_Infor_Management)
++ https://docs.google.com/spreadsheets/d/1eNtpyN6KS4yfSc6q8iavuXgJvzaUogWvf6YYg-S7LOQ/ (WebApplication1) (CRM) (CRMS)
+
 ## Tech Stack
 + C#
 + SQL
