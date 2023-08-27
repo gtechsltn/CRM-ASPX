@@ -1,7 +1,23 @@
 # Customer Management System (CRM) in ASP.NET
 + https://github.com/gtechsltn/CRM
 + https://themeforest.net/search/crm?compatible_with=Bootstrap
-+ **CRUD site:www.codeproject.com**
+
+## CRUD DataTables Paging Searching Sorting with jQuery AJAX and POST in .NET Core
++ https://www.codeproject.com/Articles/5061500/ASP-NET-Core-CRUD-Operations-With-Paging-Sorting-S
+
+## **CRUD site:www.codeproject.com**
++ Beginners Guide for Creating GridView in ASP.NET MVC 5
++ Grid View with Server Side Filtering, Sorting and Paging in ASP.NET MVC 5
++ Grid View With Server Side Advanced Search Using jQuery DataTables In ASP.NET MVC 5
++ Grid View with AJAX based CRUD Operations in ASP.NET MVC 5
++ ASP.NET MVC Async File Uploading using JQuery
++ Async File Uploading in ASP.NET MVC
++ Relationship in Entity Framework Using Code First Approach With Fluent API
++ Code First Migrations With Entity Framework
++ CRUD Operations Using Entity Framework 5.0 Code First Approach in MVC
++ CRUD Operations Using the Repository Pattern in MVC
++ CRUD Operations Using the Generic Repository Pattern and Unit of Work in MVC
++ CRUD Operations Using the Generic Repository Pattern and Dependency Injection in MVC
 
 # CRUD Operations with Audit and Authentication
 + ORM-less CRUD Operations with Audit, Authentication and Authorization
