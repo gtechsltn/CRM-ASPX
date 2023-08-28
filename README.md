@@ -17,6 +17,14 @@
   + https://viblo.asia/p/tim-hieu-ve-sweetalert2-p2-3P0lPeGb5ox
   + https://laracasts.com/discuss/channels/javascript/sweetalert2-confirmation-before-modal-closed-bootstrap4
 
+## Fluent UI for Bootstrap
++ https://scottkuhl.medium.com/fluent-ui-for-bootstrap-3fd983d0c2e3
++ https://github.com/gtechsltn/bootstrap-fluent-design
++ https://github.com/gtechsltn/winstrap
+
+## TreeView ~ Tabelizer
++ https://www.jqueryscript.net/demo/jQuery-Plugin-To-Create-Multilevel-Collapsible-Table-Rows-Tabelizer/
+
 ## Datatable Server-side processing
 + https://www.c-sharpcorner.com/article/implement-crud-operations-with-sorting-searching-and-paging-using-ef-core-in-as/
 + https://www.codeproject.com/Articles/5061500/ASP-NET-Core-CRUD-Operations-With-Paging-Sorting-S
