@@ -12,6 +12,18 @@
   + https://viblo.asia/p/tim-hieu-ve-sweetalert2-p2-3P0lPeGb5ox
   + https://laracasts.com/discuss/channels/javascript/sweetalert2-confirmation-before-modal-closed-bootstrap4
 
+## Feature Request
++ IsDelete = 0,1,NULL
++ UserName is UNIQUE
++ Captcha
++ CRUD with Searching, Paging, Sorting in Server Side
++ CRUD with Audit Trail, Authentication, Authorization
++ Audit (CRUD)
++ Audit Trail (CreatedBy, CreatedOn, ModifiedBy, ModifiedOn)
+
+## Captcha
+![image](https://github.com/gtechsltn/CRM-ASPX/assets/87538251/1c7c4c67-79d2-4635-8768-35d6208a39ae)
+
 ## CRUD DataTables Paging Searching Sorting with jQuery AJAX and POST in .NET Core
 + ASP.NET Core CRUD Operations With Paging, Sorting, Searching and Export Data Option
 + https://www.codeproject.com/Articles/5061500/ASP-NET-Core-CRUD-Operations-With-Paging-Sorting-S
