@@ -1,5 +1,7 @@
 # Customer Management System (CRM) in ASP.NET
-+ CRUD with Change Tracking, Tracking Change, Audit Trail, Audit Log, Paging, Sorting, Filtering, Searching, Authentication and Authorization
++ **Building Production Ready Applications**
++ https://scottkuhl.medium.com/building-production-ready-applications-24405c706707
++ CRUD (Create, Read, Update, Delete) with Change Tracking, Tracking Change, Audit Trail, Audit Log, Paging, Sorting, Filtering, Searching, Authentication and Authorization
 + Datatables Ajax Source Server-Side Processing
 + https://preview.keenthemes.com/metronic/demo6/crud/datatables/data-sources/ajax-server-side.html
 + https://github.com/gtechsltn/CRM
@@ -14,6 +16,21 @@
   + https://viblo.asia/p/tim-hieu-ve-sweetalert2-p1-djeZ1RqGlWz
   + https://viblo.asia/p/tim-hieu-ve-sweetalert2-p2-3P0lPeGb5ox
   + https://laracasts.com/discuss/channels/javascript/sweetalert2-confirmation-before-modal-closed-bootstrap4
+
+## Server-side procesing
++ https://www.c-sharpcorner.com/article/implement-crud-operations-with-sorting-searching-and-paging-using-ef-core-in-as/
++ https://www.codeproject.com/Articles/5061500/ASP-NET-Core-CRUD-Operations-With-Paging-Sorting-S
++ https://github.com/DavidSuescunPelegay/jQuery-datatable-server-side-net-core
++ https://github.com/gtechsltn/jQuery-datatable-server-side-net-core
++ https://www.c-sharpcorner.com/article/asp-net-mvc-jquery-server-side-datatable-example/
++ https://codewithmukesh.com/blog/jquery-datatable-in-aspnet-core/
++ https://github.com/gtechsltn/Datatables.ServerSide
++ https://www.codeproject.com/Articles/1257480/jQuery-DataTable-Integration-with-Server-Side-Proc
++ https://qawithexperts.com/article/asp-net/jquery-datatable-server-side-pagination-sorting-and-filterin/285
++ https://qawithexperts.com/article/asp.net/jquery-datatable-server-side-processing-with-web-api-in-aspn/72
++ https://stackoverflow.com/questions/3193930/using-jquery-datatable-for-server-side-processing-with-paging-filtering-and-sea
++ https://drive.google.com/file/d/1s0sBmWXdoEyquKT69lWpFmHrVbJ4nlCs/
++ 
 
 ## Feature Request
 + IsDelete = 0,1,NULL
