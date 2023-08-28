@@ -17,7 +17,7 @@
   + https://viblo.asia/p/tim-hieu-ve-sweetalert2-p2-3P0lPeGb5ox
   + https://laracasts.com/discuss/channels/javascript/sweetalert2-confirmation-before-modal-closed-bootstrap4
 
-## Server-side procesing
+## Datatable Server-side processing
 + https://www.c-sharpcorner.com/article/implement-crud-operations-with-sorting-searching-and-paging-using-ef-core-in-as/
 + https://www.codeproject.com/Articles/5061500/ASP-NET-Core-CRUD-Operations-With-Paging-Sorting-S
 + https://github.com/DavidSuescunPelegay/jQuery-datatable-server-side-net-core
@@ -30,7 +30,15 @@
 + https://qawithexperts.com/article/asp.net/jquery-datatable-server-side-processing-with-web-api-in-aspn/72
 + https://stackoverflow.com/questions/3193930/using-jquery-datatable-for-server-side-processing-with-paging-filtering-and-sea
 + https://drive.google.com/file/d/1s0sBmWXdoEyquKT69lWpFmHrVbJ4nlCs/
-+ 
+
+## Audit Logging
++ https://www.datadoghq.com/knowledge-center/audit-logging/
+
+## Tracking Change
++ http://bilal-fazlani.blogspot.com/2013/09/adding-log-audit-feature-to-entity.html
++ https://github.com/bilal-fazlani/tracker-enabled-dbcontext/
++ https://github.com/gtechsltn/tracker-enabled-dbcontext
+![image](https://github.com/gtechsltn/CRM-ASPX/assets/87538251/3580bab2-2c63-4f1e-bfbe-1574861b0b9c)
 
 ## Feature Request
 + IsDelete = 0,1,NULL
