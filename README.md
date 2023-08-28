@@ -17,6 +17,11 @@
   + https://viblo.asia/p/tim-hieu-ve-sweetalert2-p2-3P0lPeGb5ox
   + https://laracasts.com/discuss/channels/javascript/sweetalert2-confirmation-before-modal-closed-bootstrap4
 
+## SQL Server WITH (READUNCOMMITTED) and WITH (NOLOCK) 
++ https://www.mssqltips.com/sqlservertip/2470/understanding-the-sql-server-nolock-hint/
++ https://techjogging.com/fast-record-count-in-table-or-tables-in-database-in-sql-server.html
++ https://www.sqlshack.com/understanding-impact-clr-strict-security-configuration-setting-sql-server-2017/
+
 ## Fluent UI for Bootstrap
 + https://scottkuhl.medium.com/fluent-ui-for-bootstrap-3fd983d0c2e3
 + https://github.com/gtechsltn/bootstrap-fluent-design
