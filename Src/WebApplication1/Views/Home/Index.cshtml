@@ -272,6 +272,7 @@
 
             $(document).on('keypress', '#Mobile', function (evt) {
                 // Only ASCII character in that range allowed
+                // 43 ~ '+' character
                 var ASCIICode = (evt.which) ? evt.which : evt.keyCode;
                 if (ASCIICode === 43) {
                     return true;
